@@ -1,0 +1,293 @@
+orden_seccion,seccion,subtitulo_seccion,grupo,orden_item,item,precio,precio2,nota
+1,Entradas,,,1,Rabas,26500,,
+1,Entradas,,,2,Calamaretes,31500,,
+1,Entradas,,,3,Cornalitos,17500,,
+1,Entradas,,,4,Empanada de lisa,1800,,
+1,Entradas,,,5,Empanada de mariscos,2000,,
+1,Entradas,,,6,Empanada de atún,2000,,
+1,Entradas,,,7,Empanada de carne,1800,,
+1,Entradas,,,8,Copa de langostinos,30000,,
+1,Entradas,,,9,Copa de camarones,32500,,
+1,Entradas,,,10,Picada de mariscos p/ 2 personas,41000,,
+1,Entradas,,,11,Picada de mariscos p/ 4 personas,75000,,
+1,Entradas,,,12,Mayonesa de ave,12000,,
+1,Entradas,,,13,Mayonesa de atún,12000,,
+1,Entradas,,,14,Ensalada rusa,12000,,
+1,Entradas,,,15,Lengua a la vinagreta,12000,,
+1,Entradas,,,16,Provoleta,13000,,
+1,Entradas,,,17,Pescado en escabeche,12000,,
+2,Ensaladas,,,1,Clásicas (2 ingredientes a elección),6500,,"Lechuga, tomate, zanahoria, remolacha, radicheta, cebolla, huevo"
+2,Ensaladas,,,2,Papa y Huevo,6500,,
+2,Ensaladas,,,3,Rúcula y Parmesano,7500,,
+2,Ensaladas,,,4,Mixta,7500,,
+2,Ensaladas,,,5,Completa,8500,,
+2,Ensaladas,,,6,Mediterránea (2 personas),11000,,"Rúcula, tomate cherry, aceituna negra, choclo y palmitos"
+2,Ensaladas,,,7,Caesar (2 personas),11000,,"Lechuga, parmesano, mayonesa, crema de anchoas, croutones y pollo"
+2,Ensaladas,,,8,Natural (2 personas),11000,,"Espárragos, palmitos, tomate, zanahoria, champignon, rúcula"
+2,Ensaladas,,,9,Tibia de langostinos (2 personas),14500,,"Langostino, papa, rúcula, jamón crudo, tomate, muzzarela y aceituna negra"
+2,Ensaladas,,,10,Ensalada El Delfín (2 personas),16000,,"Camarón, mejillón, berberecho, kanikama, almeja, calamar y verduras"
+2,Ensaladas,,,11,Ensalada Marina (2 personas),16000,,"Rúcula, ajo y oliva, jibia, mejillón, calamar, papa"
+2,Ensaladas,,,12,Ensalada Ernestina,11000,,"Lechuga, tomate, zanahoria, choclo, palmito, jamón"
+3,Pastas Caseras,,,1,Tallarines,9900,,
+3,Pastas Caseras,,,2,Ñoquis,9900,,
+3,Pastas Caseras,,,3,Ravioles,10400,,
+3,Pastas Caseras,,,4,Lasagnas,12000,,
+3,Pastas Caseras,,,5,Canelones,12000,,
+3,Pastas Caseras,,,6,Sorrentinos,11900,,
+3,Pastas Caseras,,,7,Sorrentinos Gran Delfín,19500,,
+3,Pastas Caseras,,,8,Tallarines con Calamar,17500,,
+3,Pastas Caseras,,,9,Tallarines con Mariscos,20500,,
+3,Pastas Caseras,,,10,Cintas negras Gran Delfín,20500,,
+3,Pastas Caseras,,,11,Mix de sorrentinos,12500,,"3 variedades: verdes, de calabaza y de jamón y queso"
+4,Salsas,Para acompañar las pastas caseras,,1,"Tuco, Manteca, Salsa Blanca",5000,,
+4,Salsas,,,2,"Mixta, Crema, Bolognesa",7000,,
+4,Salsas,,,3,Pesto,5900,,
+4,Salsas,,,4,Parissiene,7900,,"Crema, jamón cocido, pollo y champignones"
+4,Salsas,,,5,Scarparo,7900,,"Salsa rosa, jamón cocido, pollo, champignones"
+4,Salsas,,,6,Príncipe de Nápoles,7900,,"Salsa blanca, jamón cocido, pollo, champignones y huevo gratinado"
+4,Salsas,,,7,Salsa cuatro quesos,8500,,
+4,Salsas,,,8,Estofado,7000,,
+5,Minutas,,,1,Milanesa de Ternera,24000,,
+5,Minutas,,,2,Milanesa con Papas Fritas (2 personas),31000,,
+5,Minutas,,,3,Milanesa Napolitana con Papas Fritas (2 personas),36000,,
+5,Minutas,,,4,Suprema,24000,,
+5,Minutas,,,5,Suprema con Papas Fritas (2 personas),31000,,
+5,Minutas,,,6,Suprema Napolitana con Papas Fritas (2 personas),36000,,
+5,Minutas,,,7,Suprema Maryland (2 personas),36000,,
+5,Minutas,,,8,Filet de Merluza,26000,,
+5,Minutas,,,9,Filet de Merluza con Papas Fritas (2 personas),31000,,
+5,Minutas,,,10,Papas Fritas,8500,,
+5,Minutas,,,11,Puré,9000,,
+5,Minutas,,,12,Papas al natural,5000,,
+5,Minutas,,,13,Huevos Fritos (2),4000,,
+6,Parrilla,,,1,Chorizo / Morcilla,6000,,
+6,Parrilla,,,2,Bondiola de cerdo,15000,,
+6,Parrilla,,,3,Costillitas de cerdo,15000,,
+6,Parrilla,,,4,Chinchulín,12000,,
+6,Parrilla,,,5,Riñón,12000,,
+6,Parrilla,,,6,Molleja,21000,,
+6,Parrilla,,,7,Pollo,13000,,
+6,Parrilla,,,8,Asado,19000,,
+6,Parrilla,,,9,Bife de lomo,24000,,
+6,Parrilla,,,10,Bife de chorizo,24000,,
+6,Parrilla,,,11,Parrillada (2 personas),47000,,"Asado, pollo, chorizo, morcilla, chinchulín, riñón"
+7,Mariscos,,,1,Arroz con Calamar (2 personas),35200,,
+7,Mariscos,,,2,Arroz con Mejillones (2 personas),36800,,
+7,Mariscos,,,3,Arroz con Berberechos (2 personas),43800,,
+7,Mariscos,,,4,Arroz con Almejas (2 personas),43800,,
+7,Mariscos,,,5,Arroz con Camarones (2 personas),48000,,
+7,Mariscos,,,6,Arroz con Mariscos (2 personas),45500,,
+7,Mariscos,,,7,Arroz con Pulpo (1 persona),69000,,
+7,Mariscos,,,8,Gambas al Ajillo,23500,,
+7,Mariscos,,,9,Langostinos,21500,,
+7,Mariscos,,,10,Langostinos a la milanesa,23500,,
+7,Mariscos,,,11,Berberechos a la Provenzal,37000,,
+7,Mariscos,,,12,Cholgas a la Provenzal,21500,,
+7,Mariscos,,,13,Vieyras gratinadas,23500,,
+7,Mariscos,,,14,Kani-Kama,19000,,
+7,Mariscos,,,15,Mejillones con Cáscara a la Provenzal,21500,,
+7,Mariscos,,,16,Mejillones a la Provenzal,21500,,
+7,Mariscos,,,17,Calamar a la Provenzal,21500,,
+7,Mariscos,,,18,Cazuela de Mariscos (2 personas),57000,,
+7,Mariscos,,,19,Cazuela de Pulpo (1 persona),95000,,
+7,Mariscos,,,20,Paella (2 personas),46000,,
+7,Mariscos,,,21,Paella (4 personas),84000,,
+7,Mariscos,,,22,Pulpo a la Española,75000,,
+7,Mariscos,,,23,Pulpo a la Provenzal,75000,,
+7,Mariscos,,,24,Pulpo a la Gallega,75000,,
+8,Cocina,,,1,Mollejas al verdeo,26000,,"Salsa a base de verdeo y demiglace, con guarnición de papas española"
+8,Cocina,,,2,Bondiola de cerdo agridulce,20500,,Con guarnición de batatas a la española
+8,Cocina,,,3,Bondiola de cerdo al verdeo,20500,,"Salsa a base de verdeo y demiglace, con guarnición de papas españolas"
+8,Cocina,,,4,Costillita de cerdo a la riojana,20500,,"Papas fritas, 2 huevos fritos, arvejas, jamón y morrón"
+8,Cocina,,,5,Bife de lomo al roquefort,27500,,"Medallón de lomo con salsa roquefort y crema, con guarnición de papas españolas"
+8,Cocina,,,6,Bife de lomo al champignon,27500,,"Medallón de lomo con salsa demiglace, champignones y guarnición de papas españolas"
+8,Cocina,,,7,Bife de lomo al verdeo,27500,,"Medallón de lomo con base de salsa demiglace y verdeo, con guarnición de papas españolas"
+8,Cocina,,,8,Bife de lomo al romero,27500,,"Medallón de lomo con salsa demiglace y romero, con guarnición de papas noissette"
+8,Cocina,,,9,Mixto Gran Delfín,42000,,Pulpo y langostinos con 3 salsas y guarnición de papas noissette
+9,Pescados al Gusto,,,1,Merluza al ajillo,17000,,
+9,Pescados al Gusto,,,2,Merluza a la Provenzal,17000,,
+9,Pescados al Gusto,,,3,Lenguado a la Crema,20500,,
+9,Pescados al Gusto,,,4,Lenguado al Roquefort,20500,,Con guarnición de puré duquesa
+9,Pescados al Gusto,,,5,Lenguado al Champignon,20500,,
+9,Pescados al Gusto,,,6,Lenguado con Crema de Camarones,25500,,
+9,Pescados al Gusto,,,7,Salmón blanco al Limón (en rodajas),17500,,
+9,Pescados al Gusto,,,8,Salmón blanco a la Crema (en rodajas),20000,,
+9,Pescados al Gusto,,,9,Salmón blanco al Roquefort (en rodajas),20000,,Con guarnición de puré duquesa
+9,Pescados al Gusto,,,10,Salmón blanco al Champignon (en rodajas),20000,,
+9,Pescados al Gusto,,,11,Salmón rosado al Limón,44000,,
+9,Pescados al Gusto,,,12,Salmón rosado a la Crema,48000,,
+9,Pescados al Gusto,,,13,Salmón rosado al Roquefort,48000,,Con guarnición de puré duquesa
+9,Pescados al Gusto,,,14,Salmón rosado con Crema de Camarones,53000,,
+10,Pollos al Gusto,,,1,Pollo a la provenzal,17500,,
+10,Pollos al Gusto,,,2,Pollo al ajillo,17500,,
+10,Pollos al Gusto,,,3,Pollo a la portuguesa,17500,,"Morrón, cebolla, pimentón"
+10,Pollos al Gusto,,,4,Pollo a la crema,17500,,
+10,Pollos al Gusto,,,5,Pollo al roquefort,17500,,
+10,Pollos al Gusto,,,6,Pollo al champignon,17500,,
+10,Pollos al Gusto,,,7,Pollo al verdeo,17500,,
+10,Pollos al Gusto,,,8,Pollo agridulce,17500,,
+11,Pescados a la Parrilla,Precio por porción individual / para 2 personas,,1,Lisa con Salsa Primavera,16000,26000,"Zanahoria, mostaza, cebolla, morrón, perejil, ajo"
+11,Pescados a la Parrilla,,,2,Lisa con Salsa Criolla,16000,26000,"Tomate, cebolla, morrón, aceite, orégano"
+11,Pescados a la Parrilla,,,3,Lisa con Salsa Vasca,16000,26000,"Chile, pimentón, ají molido, aceite de oliva"
+11,Pescados a la Parrilla,,,4,Lisa con Salsa Provenzal,16000,26000,"Ajo, perejil, aceite"
+11,Pescados a la Parrilla,,,5,Lisa al Limón,16000,26000,
+11,Pescados a la Parrilla,,,6,Lisa al Roquefort,19500,32000,
+11,Pescados a la Parrilla,,,7,Lisa a la Crema,19500,32000,
+11,Pescados a la Parrilla,,,8,Lisa con crema de camarones,24000,40000,
+11,Pescados a la Parrilla,,,9,Lisa Gran Delfín,32000,,"Primavera, criolla, vasca, provenzal y guarnición de papas y ensalada"
+11,Pescados a la Parrilla,,,10,Corvina con Salsa Primavera,37000,,"Zanahoria, mostaza, cebolla, morrón, perejil, ajo"
+11,Pescados a la Parrilla,,,11,Corvina con Salsa Criolla,37000,,"Tomate, cebolla, morrón, aceite, orégano"
+11,Pescados a la Parrilla,,,12,Corvina con Salsa Vasca,37000,,"Chile, pimentón, ají molido, aceite de oliva"
+11,Pescados a la Parrilla,,,13,Corvina con Salsa Provenzal,37000,,"Ajo, perejil, aceite"
+11,Pescados a la Parrilla,,,14,Corvina al Limón,37000,,
+11,Pescados a la Parrilla,,,15,Corvina al Roquefort,41000,,
+11,Pescados a la Parrilla,,,16,Corvina a la Crema,41000,,
+11,Pescados a la Parrilla,,,17,Corvina con crema de camarones,51000,,
+11,Pescados a la Parrilla,,,18,Corvina Gran Delfín,43000,,"Salsa primavera, criolla, vasca, provenzal, guarnición de papas y ensalada"
+12,Sugerencias del Chef,,,1,Mejillón provenzal,19500,,Con guarnición de papas española y salsa provenzal
+12,Sugerencias del Chef,,,2,Parrillada de pescado,39000,,"Salmón blanco, trucha, mejillón, merluza, lenguado, lisa, corvina, gambas, mejillón ½ valva"
+12,Sugerencias del Chef,,,3,Pescado en escabeche,11000,,Con guarnición de papas cube
+12,Sugerencias del Chef,,,4,Papas rústicas,14000,,Papas noissette con crema y verdeo
+12,Sugerencias del Chef,,,5,Matambre a la pizza p/2,32500,,Con guarnición de papas a la española
+12,Sugerencias del Chef,,,6,Lisa Gran Delfín p/2,32000,,"Con guarnición de papas fritas y ensalada, y salsa primavera, provenzal, criolla y vasca"
+12,Sugerencias del Chef,,,7,Anchoa Gran Delfín p/2,,,"Con guarnición de papas fritas y ensalada, y salsa primavera, provenzal, criolla y vasca"
+12,Sugerencias del Chef,,,8,Peceto a la portuguesa p/2,32000,,Con guarnición de papas españolas
+12,Sugerencias del Chef,,,9,Sorrentinos de calabaza y muzzarella,18900,,Con salsa a los 4 quesos
+12,Sugerencias del Chef,,,10,Sorrentinos de jamón y queso,18900,,Con salsa de crema y verdeo
+12,Sugerencias del Chef,,,11,Ensalada verde,9900,,"Rúcula, radicheta, lechuga, apio y arvejas"
+12,Sugerencias del Chef,,,12,Ensalada Caprese,11000,,"Tomate cherry, muzzarella, albahaca, orégano"
+12,Sugerencias del Chef,,,13,Bastoncitos de corvina,32000,,Con guarnición de papas bastón y puré mixto
+12,Sugerencias del Chef,,,14,Entraña Delfín p/2,38000,,Con guarnición de papas fritas y 2 huevos fritos
+12,Sugerencias del Chef,,,15,Raviolones de ricota,16000,,Con salsa a la crema de puerros y panceta ahumada
+12,Sugerencias del Chef,,,16,Ensalada Tongo,9900,,"Con arroz, pollo, lechuga, rúcula, morrón y cebolla"
+12,Sugerencias del Chef,,,17,Empanadas de langostino,1800,,"Rellena de langostino, morrón, cebolla"
+12,Sugerencias del Chef,,,18,Creppes de espinaca,16000,,"Rellenos de jamón, muzzarella y ricota, con salsa de crema de puerros y panceta"
+12,Sugerencias del Chef,,,19,Pincho de langostino,19900,,"Envueltos en panceta, con guarnición de papas rústicas"
+12,Sugerencias del Chef,,,20,Tallarines de espinaca,17000,,Con salsa a la crema y jamón
+12,Sugerencias del Chef,,,21,Wok de vegetales p/2,19000,,A base de arroz y mix de vegetales salteados
+12,Sugerencias del Chef,,,22,Pejerrey marinera,21000,,Con guarnición de papas rejilla y ensalada
+12,Sugerencias del Chef,,,23,Calamarette a la lionesa,24000,,"Salteado con morrón, cebolla y guarnición de papas españolas"
+12,Sugerencias del Chef,,,24,Pejerrey Gran Paraná,23000,,"Con salsa roquefort, salsa blanca, gratinado al horno y guarnición de papas noisette"
+12,Sugerencias del Chef,,,25,Milanesa Don Roberto,32500,,"Con jamón, queso, morrón, crema de choclo y guarnición de papas fritas a caballo"
+13,Postres,,,1,Flan Casero,7500,,
+13,Postres,,,2,Budín de pan,7500,,
+13,Postres,,,3,Mousse de Chocolate,9000,,
+13,Postres,,,4,Ensalada de Frutas,8500,,
+13,Postres,,,5,Ensalada de Frutas con Helado,9500,,
+13,Postres,,,6,Frutillas con Crema,9500,,
+13,Postres,,,7,Helado Tricolor,8000,,
+13,Postres,,,8,Almendrado,8000,,
+13,Postres,,,9,Bombón Escocés,8000,,
+13,Postres,,,10,Bombón Suizo,8000,,
+13,Postres,,,11,Tiramisú helado,8800,,
+13,Postres,,,12,Charlotte,9000,,
+13,Postres,,,13,Don Pedro,9500,,
+13,Postres,,,14,Duraznos en Almíbar,7000,,
+13,Postres,,,15,Zapallos en Almíbar,9500,,
+13,Postres,,,16,Higos en Almíbar,9500,,
+13,Postres,,,17,Copa El Delfín,11000,,
+13,Postres,,,18,Panqueque de dulce de leche,8000,,
+13,Postres,,,19,Panqueque de manzana,9500,,
+13,Postres,,,20,Panqueque quemado al rhum,11000,,
+13,Postres,,,21,Recargo por Dulce de Leche o Crema,2700,,
+13,Postres,,,22,Queso y dulce,9500,,
+13,Postres,,,23,Tiramisú artesanal,9000,,
+14,Bebidas,,,1,"Agua, Soda, Gaseosa chica",4500,,
+14,Bebidas,,,2,Agua saborizada 500 cc,4600,,
+14,Bebidas,,,3,"Gaseosa Grande 1,5 lts",8500,,
+14,Bebidas,,,4,"Agua saborizada 1,5 lts (Aquarius)",8500,,
+14,Bebidas,,,5,Cerveza 1 lt,9500,,
+14,Bebidas,,,6,Cerveza Negra Quilmes Stout 1 lt,10500,,
+14,Bebidas,,,7,Stella Artois,14000,,
+14,Bebidas,,,8,Heineken 1 lt,16000,,
+14,Bebidas,,,9,Cerveza Andes,12000,,
+14,Bebidas,,,10,Corona 710 cc,14900,,
+14,Bebidas,,,11,Porrón Stella Artois,9000,,
+14,Bebidas,,,12,Porrón Stella sin alcohol,6500,,
+14,Bebidas,,,13,Lata cerveza 473 cc,4500,,
+14,Bebidas,,,14,Porrón Quilmes,4500,,
+14,Bebidas,,,15,Porrón Corona,6500,,
+14,Bebidas,,,16,Copa de vino,3900,,
+14,Bebidas,,,17,Exprimido de naranja,5900,,
+15,Vinos Finos,,Bodegas Etchart,1,Cafayate Torrontés,14000,,
+15,Vinos Finos,,Bodegas Etchart,2,Etchart Privado,12000,,
+15,Vinos Finos,,Bodegas López,3,Vasco Viejo,7800,,
+15,Vinos Finos,,Bodegas López,4,Vasco Viejo 3/8 (tinto/blanco),5500,,
+15,Vinos Finos,,Bodegas López,5,Selección López (tinto/blanco),9900,,
+15,Vinos Finos,,Bodegas López,6,Selección López 3/8,6500,,
+15,Vinos Finos,,Bodegas López,7,Rincón Famoso (tinto),13500,,
+15,Vinos Finos,,Bodegas López,8,Rincón Famoso (blanco),11500,,
+15,Vinos Finos,,Bodegas Bianchi,9,Bianchi Famiglia Malbec,21000,,
+15,Vinos Finos,,Bodegas Bianchi,10,Bianchi Famiglia Red Blend,,,
+15,Vinos Finos,,Bodegas Bianchi,11,Don Valentín 3/8,,,
+15,Vinos Finos,,Bodegas Bianchi,12,Don Valentín Lacrado,9700,,
+15,Vinos Finos,,Bodegas Bianchi,13,New Age,9600,,
+15,Vinos Finos,,Bodegas Rutini,14,Rutini Malbec,49000,,
+15,Vinos Finos,,Bodegas Rutini,15,Rutini Cabernet-Malbec,38500,,
+15,Vinos Finos,,Bodegas Norton,16,Norton Clásico Tinto/Blanco,9500,,
+15,Vinos Finos,,Bodegas Norton,17,Norton Clásico 3/8,5500,,
+15,Vinos Finos,,Bodegas Norton,18,Norton Elegido,9500,,
+15,Vinos Finos,,Bodegas Norton,19,Norton Select,14500,,
+15,Vinos Finos,,Bodegas Norton,20,Cosecha Tardía,12000,,
+15,Vinos Finos,,Bodegas Norton,21,Norton Mil Rosas,12000,,
+15,Vinos Finos,,Bodegas Norton,22,Champagne Norton E. Brut,23000,,
+15,Vinos Finos,,Bodegas Santa Julia,23,Santa Julia Chenin dulce,15500,,
+15,Vinos Finos,,Bodegas Santa Julia,24,Santa Julia Malbec / Chardonnay / Torrontés,11900,,
+15,Vinos Finos,,Bodegas Santa Julia,25,Santa Julia Syrah Rosé,11900,,
+15,Vinos Finos,,Bodegas Santa Julia,26,Santa Julia 3/8 Malbec / Chardonnay,8000,,
+15,Vinos Finos,,Bodegas Nieto Senetiner,27,Benjamín Nieto Senetiner Malbec / Merlot,11500,,
+15,Vinos Finos,,Bodegas Nieto Senetiner,28,Benjamín Nieto Senetiner Cabernet Sauvignon,11500,,
+15,Vinos Finos,,Bodegas Nieto Senetiner,29,Benjamín Nieto Senetiner Chardonnay / Sauv. Blanc,11500,,
+15,Vinos Finos,,Bodega Luigi Bosca,30,Luigi Bosca Malbec,26500,,
+15,Vinos Finos,,Bodega Luigi Bosca,31,Luigi Bosca Cabernet Sauvignon,26500,,
+15,Vinos Finos,,Bodega Luigi Bosca,32,Finca La Linda Malbec,19500,,
+15,Vinos Finos,,Bodega Luigi Bosca,33,Finca La Linda Cabernet Sauvignon,19500,,
+15,Vinos Finos,,Bodegas El Esteco,34,Trapiche Reserva Malbec / Syrah,17000,,
+15,Vinos Finos,,Bodegas El Esteco,35,Trapiche Reserva Cabernet / Merlot,17000,,
+15,Vinos Finos,,Bodegas El Esteco,36,Trapiche Reserva Chardonnay,17000,,
+15,Vinos Finos,,Bodegas El Esteco,37,Trapiche Reserva Malbec 3/8,,,
+15,Vinos Finos,,Bodegas El Esteco,38,Trapiche Alaris Sauvignon Blanc / Malbec,10500,,
+15,Vinos Finos,,Bodegas El Esteco,39,Elementos Malbec,10500,,
+15,Vinos Finos,,Bodegas El Esteco,40,Elementos Cabernet Sauvignon,10500,,
+15,Vinos Finos,,Bodegas El Esteco,41,Elementos Torrontés,10500,,
+15,Vinos Finos,,Bodegas El Esteco,42,Elementos Torrontés dulce,10500,,
+15,Vinos Finos,,Bodegas San Huberto,43,Malbec,9500,,
+15,Vinos Finos,,Bodegas San Huberto,44,Cabernet Sauvignon,9500,,
+15,Vinos Finos,,Bodegas San Huberto,45,Chardonnay,9500,,
+15,Vinos Finos,,Bodegas Catena Zapata,46,Álamos Malbec,17000,,
+15,Vinos Finos,,Bodegas Catena Zapata,47,Álamos Cabernet Sauvignon,17000,,
+15,Vinos Finos,,Bodegas Catena Zapata,48,Álamos Chardonnay,17000,,
+15,Vinos Finos,,Bodegas Catena Zapata,49,Álamos Chardonnay / Malbec 3/8,11000,,
+15,Vinos Finos,,Bodegas Catena Zapata,50,Saint Felicien Malbec,26000,,
+15,Vinos Finos,,Bodegas Uxmal,51,Uxmal Malbec,12900,,
+15,Vinos Finos,,Bodegas Uxmal,52,Uxmal Cabernet Sauvignon,12900,,
+15,Vinos Finos,,Bodegas Uxmal,53,Uxmal Malbec 3/8,,,
+15,Vinos Finos,,Bodegas Chandon,54,Latitud 33 Malbec,17500,,
+15,Vinos Finos,,Bodegas Chandon,55,Latitud 33 Cabernet Sauvignon,17500,,
+15,Vinos Finos,,Bodegas Chandon,56,Latitud 33 Sauvignon Blanc,17500,,
+15,Vinos Finos,,Bodegas Chandon,57,Latitud 33 Chardonnay,17500,,
+15,Vinos Finos,,Bodegas Chandon,58,Latitud 33 Syrah,17500,,
+15,Vinos Finos,,Bodegas Chandon,59,Champagne Chandon,43000,,
+15,Vinos Finos,,Finca Las Moras,60,Dada 1,11900,,
+15,Vinos Finos,,Finca Las Moras,61,Dada 2,11900,,
+15,Vinos Finos,,Finca Las Moras,62,Alma Mora Malbec / Cab. Sauvignon / Chardonnay,13500,,
+15,Vinos Finos,,Finca Las Moras,63,Alma Mora Dulce de Viognier,13500,,
+15,Vinos Finos,,Bodega La Rural,64,San Felipe,10900,,
+15,Vinos Finos,,Bodega La Rural,65,San Felipe 3/8,7500,,
+15,Vinos Finos,,Bodega La Rural,66,San Felipe Roble Rosé,12900,,
+15,Vinos Finos,,Bodega La Rural,67,San Felipe 12 uvas,11500,,
+15,Vinos Finos,,Bodega La Rural,68,San Felipe Roble Malbec,12900,,
+15,Vinos Finos,,Bodega La Rural,69,San Felipe Roble Cabernet Sauvignon,12900,,
+15,Vinos Finos,,Bodega La Rural,70,San Felipe Roble Merlot,12900,,
+15,Vinos Finos,,Bodega La Rural,71,San Felipe Roble Syrah,12900,,
+15,Vinos Finos,,Bodega La Rural,72,San Felipe Roble Chardonnay,12900,,
+15,Vinos Finos,,Bodega La Rural,73,San Felipe Roble 3/8 Malbec / Chardonnay,7500,,
+15,Vinos Finos,,Bodega La Rural,74,Trumpeter Malbec,17900,,
+15,Vinos Finos,,Bodega La Rural,75,Trumpeter Cabernet Sauvignon,17900,,
+15,Vinos Finos,,Bodega La Rural,76,"Trumpeter 3/8 (Malbec, Sauvignon Blanc)",10900,,
+15,Vinos Finos,,Bodega Salentein,77,Killka Malbec / Chardonnay,16500,,
+15,Vinos Finos,,Bodega Salentein,78,Portillo Malbec / Sauvignon Blanc,12500,,
+15,Vinos Finos,,Bodega Salentein,79,Portillo 3/8 Malbec,7900,,
+15,Vinos Finos,,Bodega Salentein,80,Salentein Malbec / Chardonnay,23000,,
+15,Vinos Finos,,Bodega Callia,81,Callia Malbec / Chardonnay,9900,,
+16,Servicio de Panera / Mesa,,,1,Cubierto por persona,1800,,

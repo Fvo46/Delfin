@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Cantina del Delfín — Marisquería · San Clemente del Tuyú</title>
 <meta name="description" content="Carta de La Cantina del Delfín, marisquería en San Clemente del Tuyú. Entradas, mariscos, pescados, pastas caseras, parrilla, postres y vinos.">
-<link rel="icon" href="assets/logo.jpg">
+<link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,7 +41,6 @@
 
   a{ color:inherit; }
 
-  /* ---------- HERO ---------- */
   .hero{
     position:relative;
     background: radial-gradient(120% 160% at 50% -20%, #123a5e 0%, var(--navy) 45%, var(--navy-deep) 100%);
@@ -50,7 +49,6 @@
     padding: 3.5rem 1.5rem 4.5rem;
     overflow:hidden;
   }
-
   .hero::before{
     content:"";
     position:absolute;
@@ -60,17 +58,14 @@
       radial-gradient(circle at 85% 75%, rgba(191,224,234,.08) 0, transparent 45%);
     pointer-events:none;
   }
-
   .hero-logo{
     width: 128px;
     height: 128px;
-    border-radius:50%;
-    object-fit:cover;
-    box-shadow: 0 0 0 6px rgba(255,255,255,.08), 0 18px 40px rgba(0,0,0,.35);
+    object-fit:contain;
+    filter: drop-shadow(0 14px 26px rgba(0,0,0,.35));
     margin-bottom:1.25rem;
     position:relative;
   }
-
   .hero-eyebrow{
     letter-spacing:.28em;
     text-transform:uppercase;
@@ -79,20 +74,17 @@
     font-weight:600;
     margin-bottom:.6rem;
   }
-
   .hero h1{
     font-size: clamp(2.2rem, 6vw, 3.6rem);
     font-weight:600;
     line-height:1.05;
     margin-bottom:.6rem;
   }
-
   .hero-sub{
     font-size:1.05rem;
     color:#d9e6ee;
     font-weight:400;
   }
-
   .hero-wave{
     position:absolute;
     left:0; right:0; bottom:-1px;
@@ -100,7 +92,6 @@
   }
   .hero-wave svg{ width:100%; height:auto; display:block; }
 
-  /* ---------- NAV ---------- */
   .nav-wrap{
     position:sticky;
     top:0;
@@ -134,17 +125,9 @@
     transition:background .15s ease, border-color .15s ease;
   }
   nav.menu-nav a:hover{ background:var(--paper-alt); border-color:var(--line); }
-  nav.menu-nav a.active{
-    background:var(--navy);
-    color:#fff;
-  }
+  nav.menu-nav a.active{ background:var(--navy); color:#fff; }
 
-  /* ---------- MAIN ---------- */
-  main{
-    max-width:760px;
-    margin:0 auto;
-    padding: 2.4rem 1.4rem 1rem;
-  }
+  main{ max-width:760px; margin:0 auto; padding: 2.4rem 1.4rem 1rem; }
 
   .menu-section{
     padding: 1.9rem 0 2.3rem;
@@ -170,14 +153,12 @@
     margin-top:.5rem;
     border-radius:2px;
   }
-
   .section-subtitle{
     margin:.55rem 0 0;
     font-size:.88rem;
     font-style:italic;
     color:#6b6154;
   }
-
   .group-title{
     font-size:1.02rem;
     font-weight:600;
@@ -187,58 +168,17 @@
     margin: 1.6rem 0 .5rem;
   }
   .group-title:first-of-type{ margin-top:1.2rem; }
-
-  .item-list{
-    list-style:none;
-    margin:1rem 0 0;
-    padding:0;
-  }
-
+  .item-list{ list-style:none; margin:1rem 0 0; padding:0; }
   .item{ margin:0 0 .68rem; }
+  .item-row{ display:flex; align-items:baseline; gap:.4rem; }
+  .item-name{ font-weight:500; color:var(--ink); font-size:.98rem; }
+  .item-dots{ flex:1 1 auto; border-bottom:2px dotted var(--line); margin-bottom:.28rem; min-width:1rem; }
+  .item-price{ font-weight:600; color:var(--gold); font-variant-numeric: tabular-nums; font-size:.98rem; white-space:nowrap; }
+  .item-price-dual em{ font-style:normal; color:#a89a7d; padding:0 .1rem; font-weight:400; }
+  .item-note{ margin:.15rem 0 0; font-size:.83rem; color:#726A5C; line-height:1.4; }
 
-  .item-row{
-    display:flex;
-    align-items:baseline;
-    gap:.4rem;
-  }
-
-  .item-name{
-    font-weight:500;
-    color:var(--ink);
-    font-size:.98rem;
-  }
-
-  .item-dots{
-    flex:1 1 auto;
-    border-bottom:2px dotted var(--line);
-    margin-bottom:.28rem;
-    min-width:1rem;
-  }
-
-  .item-price{
-    font-weight:600;
-    color:var(--gold);
-    font-variant-numeric: tabular-nums;
-    font-size:.98rem;
-    white-space:nowrap;
-  }
-  .item-price-dual em{
-    font-style:normal;
-    color:#a89a7d;
-    padding:0 .1rem;
-    font-weight:400;
-  }
-
-  .item-note{
-    margin:.15rem 0 0;
-    font-size:.83rem;
-    color:#726A5C;
-    line-height:1.4;
-  }
-
-  /* Sugerencias visual accent */
-  #sugerencias .item-name{ color:var(--navy); }
-  #sugerencias{
+  #sugerencias-del-chef .item-name{ color:var(--navy); }
+  #sugerencias-del-chef{
     background: var(--paper-alt);
     margin: 1.9rem -1.4rem 2.3rem;
     padding: 1.9rem 1.4rem 2.3rem;
@@ -246,48 +186,42 @@
     border-top:1px solid var(--line);
   }
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--navy-deep);
-    color:#cfe0e8;
-    text-align:center;
-    padding: 2.6rem 1.5rem 2.2rem;
-    margin-top:1rem;
+  .state-msg{ max-width:520px; margin: 3rem auto; text-align:center; padding: 0 1.4rem; color:#6b6154; }
+  .state-msg .spinner{
+    width:34px; height:34px; margin: 0 auto 1rem; border-radius:50%;
+    border:3px solid var(--line); border-top-color: var(--gold-soft);
+    animation: spin 0.9s linear infinite;
   }
-  footer img{
-    width:64px;
-    opacity:.9;
-    margin-bottom:.8rem;
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .state-msg.error{ color:#8a3b2f; }
+  .state-msg button{
+    margin-top:1rem; background:var(--navy); color:#fff; border:none;
+    padding:.55rem 1.1rem; border-radius:8px; font-size:.85rem; font-weight:600; cursor:pointer;
   }
-  footer .foot-name{
-    font-family:'Fraunces', serif;
-    font-size:1.15rem;
-    color:#fff;
-    margin-bottom:.2rem;
-  }
-  footer .foot-sub{
-    font-size:.78rem;
-    letter-spacing:.06em;
-    color:#8fa9b8;
-    text-transform:uppercase;
-  }
+  .state-msg code{ background:rgba(0,0,0,.06); padding:.1rem .35rem; border-radius:4px; font-size:.85em; }
+  .cache-note{ font-size:.76rem; color:#a89a7d; text-align:center; margin: -.5rem auto 1.5rem; }
+
+  footer{ background:var(--navy-deep); color:#cfe0e8; text-align:center; padding: 2.6rem 1.5rem 2.2rem; margin-top:1rem; }
+  footer img{ width:64px; object-fit:contain; opacity:.9; margin-bottom:.8rem; }
+  footer .foot-name{ font-family:'Fraunces', serif; font-size:1.15rem; color:#fff; margin-bottom:.2rem; }
+  footer .foot-sub{ font-size:.78rem; letter-spacing:.06em; color:#8fa9b8; text-transform:uppercase; }
 
   @media (max-width:480px){
     .hero{ padding: 2.6rem 1.2rem 3.6rem; }
     .hero-logo{ width:104px; height:104px; }
     main{ padding: 1.8rem 1rem 1rem; }
-    #sugerencias{ margin: 1.9rem -1rem 2.3rem; padding: 1.9rem 1rem 2.3rem; }
+    #sugerencias-del-chef{ margin: 1.9rem -1rem 2.3rem; padding: 1.9rem 1rem 2.3rem; }
   }
-
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
+    .state-msg .spinner{ animation:none; }
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <img class="hero-logo" src="assets/logo.jpg" alt="Logo La Cantina del Delfín">
+  <img class="hero-logo" src="assets/logo.png" alt="Logo La Cantina del Delfín">
   <p class="hero-eyebrow">Marisquería</p>
   <h1>La Cantina del Delfín</h1>
   <p class="hero-sub">San Clemente del Tuyú</p>
@@ -297,477 +231,173 @@
 </header>
 
 <div class="nav-wrap">
-<nav class="menu-nav" id="menu-nav">
-  <a href="#entradas">Entradas</a>
-  <a href="#ensaladas">Ensaladas</a>
-  <a href="#pastas">Pastas</a>
-  <a href="#salsas">Salsas</a>
-  <a href="#minutas">Minutas</a>
-  <a href="#parrilla">Parrilla</a>
-  <a href="#mariscos">Mariscos</a>
-  <a href="#cocina">Cocina</a>
-  <a href="#pescados-gusto">Pescados al Gusto</a>
-  <a href="#pollos-gusto">Pollos al Gusto</a>
-  <a href="#pescados-parrilla">Pescados a la Parrilla</a>
-  <a href="#sugerencias">Sugerencias</a>
-  <a href="#postres">Postres</a>
-  <a href="#bebidas">Bebidas</a>
-  <a href="#vinos">Vinos Finos</a>
-  <a href="#servicio">Servicio</a>
-</nav>
+<nav class="menu-nav" id="menu-nav"><!-- se genera con JS --></nav>
 </div>
 
-<main>
-<section class="menu-section" id="entradas">
-<h2 class="section-title">Entradas</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Rabas</span><span class="item-dots"></span><span class="item-price">$26.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Calamaretes</span><span class="item-dots"></span><span class="item-price">$31.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cornalitos</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Empanada de lisa</span><span class="item-dots"></span><span class="item-price">$1.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Empanada de mariscos</span><span class="item-dots"></span><span class="item-price">$2.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Empanada de atún</span><span class="item-dots"></span><span class="item-price">$2.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Empanada de carne</span><span class="item-dots"></span><span class="item-price">$1.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Copa de langostinos</span><span class="item-dots"></span><span class="item-price">$30.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Copa de camarones</span><span class="item-dots"></span><span class="item-price">$32.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Picada de mariscos p/ 2 personas</span><span class="item-dots"></span><span class="item-price">$41.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Picada de mariscos p/ 4 personas</span><span class="item-dots"></span><span class="item-price">$75.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mayonesa de ave</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mayonesa de atún</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada rusa</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lengua a la vinagreta</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Provoleta</span><span class="item-dots"></span><span class="item-price">$13.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pescado en escabeche</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="ensaladas">
-<h2 class="section-title">Ensaladas</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Clásicas (2 ingredientes a elección)</span><span class="item-dots"></span><span class="item-price">$6.500</span></div><p class="item-note">Lechuga, tomate, zanahoria, remolacha, radicheta, cebolla, huevo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Papa y Huevo</span><span class="item-dots"></span><span class="item-price">$6.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Rúcula y Parmesano</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mixta</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Completa</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mediterránea (2 personas)</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Rúcula, tomate cherry, aceituna negra, choclo y palmitos</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Caesar (2 personas)</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Lechuga, parmesano, mayonesa, crema de anchoas, croutones y pollo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Natural (2 personas)</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Espárragos, palmitos, tomate, zanahoria, champignon, rúcula</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Tibia de langostinos (2 personas)</span><span class="item-dots"></span><span class="item-price">$14.500</span></div><p class="item-note">Langostino, papa, rúcula, jamón crudo, tomate, muzzarela y aceituna negra</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada El Delfín (2 personas)</span><span class="item-dots"></span><span class="item-price">$16.000</span></div><p class="item-note">Camarón, mejillón, berberecho, kanikama, almeja, calamar y verduras</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada Marina (2 personas)</span><span class="item-dots"></span><span class="item-price">$16.000</span></div><p class="item-note">Rúcula, ajo y oliva, jibia, mejillón, calamar, papa</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada Ernestina</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Lechuga, tomate, zanahoria, choclo, palmito, jamón</p></li>
-</ul></section>
-
-<section class="menu-section" id="pastas">
-<h2 class="section-title">Pastas Caseras</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Tallarines</span><span class="item-dots"></span><span class="item-price">$9.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Ñoquis</span><span class="item-dots"></span><span class="item-price">$9.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Ravioles</span><span class="item-dots"></span><span class="item-price">$10.400</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lasagnas</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Canelones</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Sorrentinos</span><span class="item-dots"></span><span class="item-price">$11.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Sorrentinos Gran Delfín</span><span class="item-dots"></span><span class="item-price">$19.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Tallarines con Calamar</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Tallarines con Mariscos</span><span class="item-dots"></span><span class="item-price">$20.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cintas negras Gran Delfín</span><span class="item-dots"></span><span class="item-price">$20.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mix de sorrentinos</span><span class="item-dots"></span><span class="item-price">$12.500</span></div><p class="item-note">3 variedades: verdes, de calabaza y de jamón y queso</p></li>
-</ul></section>
-
-<section class="menu-section" id="salsas">
-<h2 class="section-title">Salsas</h2>
-<p class="section-subtitle">Para acompañar las pastas caseras</p>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Tuco, Manteca, Salsa Blanca</span><span class="item-dots"></span><span class="item-price">$5.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mixta, Crema, Bolognesa</span><span class="item-dots"></span><span class="item-price">$7.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pesto</span><span class="item-dots"></span><span class="item-price">$5.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Parissiene</span><span class="item-dots"></span><span class="item-price">$7.900</span></div><p class="item-note">Crema, jamón cocido, pollo y champignones</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Scarparo</span><span class="item-dots"></span><span class="item-price">$7.900</span></div><p class="item-note">Salsa rosa, jamón cocido, pollo, champignones</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Príncipe de Nápoles</span><span class="item-dots"></span><span class="item-price">$7.900</span></div><p class="item-note">Salsa blanca, jamón cocido, pollo, champignones y huevo gratinado</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Salsa cuatro quesos</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Estofado</span><span class="item-dots"></span><span class="item-price">$7.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="minutas">
-<h2 class="section-title">Minutas</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Milanesa de Ternera</span><span class="item-dots"></span><span class="item-price">$24.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Milanesa con Papas Fritas (2 personas)</span><span class="item-dots"></span><span class="item-price">$31.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Milanesa Napolitana con Papas Fritas (2 personas)</span><span class="item-dots"></span><span class="item-price">$36.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Suprema</span><span class="item-dots"></span><span class="item-price">$24.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Suprema con Papas Fritas (2 personas)</span><span class="item-dots"></span><span class="item-price">$31.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Suprema Napolitana con Papas Fritas (2 personas)</span><span class="item-dots"></span><span class="item-price">$36.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Suprema Maryland (2 personas)</span><span class="item-dots"></span><span class="item-price">$36.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Filet de Merluza</span><span class="item-dots"></span><span class="item-price">$26.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Filet de Merluza con Papas Fritas (2 personas)</span><span class="item-dots"></span><span class="item-price">$31.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Papas Fritas</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Puré</span><span class="item-dots"></span><span class="item-price">$9.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Papas al natural</span><span class="item-dots"></span><span class="item-price">$5.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Huevos Fritos (2)</span><span class="item-dots"></span><span class="item-price">$4.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="parrilla">
-<h2 class="section-title">Parrilla</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Chorizo / Morcilla</span><span class="item-dots"></span><span class="item-price">$6.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bondiola de cerdo</span><span class="item-dots"></span><span class="item-price">$15.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Costillitas de cerdo</span><span class="item-dots"></span><span class="item-price">$15.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Chinchulín</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Riñón</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Molleja</span><span class="item-dots"></span><span class="item-price">$21.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo</span><span class="item-dots"></span><span class="item-price">$13.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Asado</span><span class="item-dots"></span><span class="item-price">$19.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de lomo</span><span class="item-dots"></span><span class="item-price">$24.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de chorizo</span><span class="item-dots"></span><span class="item-price">$24.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Parrillada (2 personas)</span><span class="item-dots"></span><span class="item-price">$47.000</span></div><p class="item-note">Asado, pollo, chorizo, morcilla, chinchulín, riñón</p></li>
-</ul></section>
-
-<section class="menu-section" id="mariscos">
-<h2 class="section-title">Mariscos</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Calamar (2 personas)</span><span class="item-dots"></span><span class="item-price">$35.200</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Mejillones (2 personas)</span><span class="item-dots"></span><span class="item-price">$36.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Berberechos (2 personas)</span><span class="item-dots"></span><span class="item-price">$43.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Almejas (2 personas)</span><span class="item-dots"></span><span class="item-price">$43.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Camarones (2 personas)</span><span class="item-dots"></span><span class="item-price">$48.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Mariscos (2 personas)</span><span class="item-dots"></span><span class="item-price">$45.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Arroz con Pulpo (1 persona)</span><span class="item-dots"></span><span class="item-price">$69.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Gambas al Ajillo</span><span class="item-dots"></span><span class="item-price">$23.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Langostinos</span><span class="item-dots"></span><span class="item-price">$21.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Langostinos a la milanesa</span><span class="item-dots"></span><span class="item-price">$23.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Berberechos a la Provenzal</span><span class="item-dots"></span><span class="item-price">$37.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cholgas a la Provenzal</span><span class="item-dots"></span><span class="item-price">$21.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Vieyras gratinadas</span><span class="item-dots"></span><span class="item-price">$23.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Kani-Kama</span><span class="item-dots"></span><span class="item-price">$19.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mejillones con Cáscara a la Provenzal</span><span class="item-dots"></span><span class="item-price">$21.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mejillones a la Provenzal</span><span class="item-dots"></span><span class="item-price">$21.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Calamar a la Provenzal</span><span class="item-dots"></span><span class="item-price">$21.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cazuela de Mariscos (2 personas)</span><span class="item-dots"></span><span class="item-price">$57.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cazuela de Pulpo (1 persona)</span><span class="item-dots"></span><span class="item-price">$95.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Paella (2 personas)</span><span class="item-dots"></span><span class="item-price">$46.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Paella (4 personas)</span><span class="item-dots"></span><span class="item-price">$84.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pulpo a la Española</span><span class="item-dots"></span><span class="item-price">$75.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pulpo a la Provenzal</span><span class="item-dots"></span><span class="item-price">$75.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pulpo a la Gallega</span><span class="item-dots"></span><span class="item-price">$75.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="cocina">
-<h2 class="section-title">Cocina</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Mollejas al verdeo</span><span class="item-dots"></span><span class="item-price">$26.000</span></div><p class="item-note">Salsa a base de verdeo y demiglace, con guarnición de papas española</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bondiola de cerdo agridulce</span><span class="item-dots"></span><span class="item-price">$20.500</span></div><p class="item-note">Con guarnición de batatas a la española</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bondiola de cerdo al verdeo</span><span class="item-dots"></span><span class="item-price">$20.500</span></div><p class="item-note">Salsa a base de verdeo y demiglace, con guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Costillita de cerdo a la riojana</span><span class="item-dots"></span><span class="item-price">$20.500</span></div><p class="item-note">Papas fritas, 2 huevos fritos, arvejas, jamón y morrón</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de lomo al roquefort</span><span class="item-dots"></span><span class="item-price">$27.500</span></div><p class="item-note">Medallón de lomo con salsa roquefort y crema, con guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de lomo al champignon</span><span class="item-dots"></span><span class="item-price">$27.500</span></div><p class="item-note">Medallón de lomo con salsa demiglace, champignones y guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de lomo al verdeo</span><span class="item-dots"></span><span class="item-price">$27.500</span></div><p class="item-note">Medallón de lomo con base de salsa demiglace y verdeo, con guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bife de lomo al romero</span><span class="item-dots"></span><span class="item-price">$27.500</span></div><p class="item-note">Medallón de lomo con salsa demiglace y romero, con guarnición de papas noissette</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Mixto Gran Delfín</span><span class="item-dots"></span><span class="item-price">$42.000</span></div><p class="item-note">Pulpo y langostinos con 3 salsas y guarnición de papas noissette</p></li>
-</ul></section>
-
-<section class="menu-section" id="pescados-gusto">
-<h2 class="section-title">Pescados al Gusto</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Merluza al ajillo</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Merluza a la Provenzal</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lenguado a la Crema</span><span class="item-dots"></span><span class="item-price">$20.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lenguado al Roquefort</span><span class="item-dots"></span><span class="item-price">$20.500</span></div><p class="item-note">Con guarnición de puré duquesa</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lenguado al Champignon</span><span class="item-dots"></span><span class="item-price">$20.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lenguado con Crema de Camarones</span><span class="item-dots"></span><span class="item-price">$25.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón blanco al Limón (en rodajas)</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón blanco a la Crema (en rodajas)</span><span class="item-dots"></span><span class="item-price">$20.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón blanco al Roquefort (en rodajas)</span><span class="item-dots"></span><span class="item-price">$20.000</span></div><p class="item-note">Con guarnición de puré duquesa</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón blanco al Champignon (en rodajas)</span><span class="item-dots"></span><span class="item-price">$20.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón rosado al Limón</span><span class="item-dots"></span><span class="item-price">$44.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón rosado a la Crema</span><span class="item-dots"></span><span class="item-price">$48.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón rosado al Roquefort</span><span class="item-dots"></span><span class="item-price">$48.000</span></div><p class="item-note">Con guarnición de puré duquesa</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Salmón rosado con Crema de Camarones</span><span class="item-dots"></span><span class="item-price">$53.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="pollos-gusto">
-<h2 class="section-title">Pollos al Gusto</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Pollo a la provenzal</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo al ajillo</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo a la portuguesa</span><span class="item-dots"></span><span class="item-price">$17.500</span></div><p class="item-note">Morrón, cebolla, pimentón</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo a la crema</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo al roquefort</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo al champignon</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo al verdeo</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Pollo agridulce</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="pescados-parrilla">
-<h2 class="section-title">Pescados a la Parrilla</h2>
-<p class="section-subtitle">Precio por porción individual / para 2 personas</p>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Lisa con Salsa Primavera</span><span class="item-dots"></span><span class="item-price item-price-dual">$16.000 <em>/</em> $26.000</span></div><p class="item-note">Zanahoria, mostaza, cebolla, morrón, perejil, ajo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa con Salsa Criolla</span><span class="item-dots"></span><span class="item-price item-price-dual">$16.000 <em>/</em> $26.000</span></div><p class="item-note">Tomate, cebolla, morrón, aceite, orégano</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa con Salsa Vasca</span><span class="item-dots"></span><span class="item-price item-price-dual">$16.000 <em>/</em> $26.000</span></div><p class="item-note">Chile, pimentón, ají molido, aceite de oliva</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa con Salsa Provenzal</span><span class="item-dots"></span><span class="item-price item-price-dual">$16.000 <em>/</em> $26.000</span></div><p class="item-note">Ajo, perejil, aceite</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa al Limón</span><span class="item-dots"></span><span class="item-price item-price-dual">$16.000 <em>/</em> $26.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa al Roquefort</span><span class="item-dots"></span><span class="item-price item-price-dual">$19.500 <em>/</em> $32.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa a la Crema</span><span class="item-dots"></span><span class="item-price item-price-dual">$19.500 <em>/</em> $32.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa con crema de camarones</span><span class="item-dots"></span><span class="item-price item-price-dual">$24.000 <em>/</em> $40.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa Gran Delfín</span><span class="item-dots"></span><span class="item-price">$32.000</span></div><p class="item-note">Primavera, criolla, vasca, provenzal y guarnición de papas y ensalada</p></li>
-</ul>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Corvina con Salsa Primavera</span><span class="item-dots"></span><span class="item-price">$37.000</span></div><p class="item-note">Zanahoria, mostaza, cebolla, morrón, perejil, ajo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina con Salsa Criolla</span><span class="item-dots"></span><span class="item-price">$37.000</span></div><p class="item-note">Tomate, cebolla, morrón, aceite, orégano</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina con Salsa Vasca</span><span class="item-dots"></span><span class="item-price">$37.000</span></div><p class="item-note">Chile, pimentón, ají molido, aceite de oliva</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina con Salsa Provenzal</span><span class="item-dots"></span><span class="item-price">$37.000</span></div><p class="item-note">Ajo, perejil, aceite</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina al Limón</span><span class="item-dots"></span><span class="item-price">$37.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina al Roquefort</span><span class="item-dots"></span><span class="item-price">$41.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina a la Crema</span><span class="item-dots"></span><span class="item-price">$41.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina con crema de camarones</span><span class="item-dots"></span><span class="item-price">$51.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Corvina Gran Delfín</span><span class="item-dots"></span><span class="item-price">$43.000</span></div><p class="item-note">Salsa primavera, criolla, vasca, provenzal, guarnición de papas y ensalada</p></li>
-</ul></section>
-
-<section class="menu-section" id="sugerencias">
-<h2 class="section-title">Sugerencias del Chef</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Mejillón provenzal</span><span class="item-dots"></span><span class="item-price">$19.500</span></div><p class="item-note">Con guarnición de papas española y salsa provenzal</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Parrillada de pescado</span><span class="item-dots"></span><span class="item-price">$39.000</span></div><p class="item-note">Salmón blanco, trucha, mejillón, merluza, lenguado, lisa, corvina, gambas, mejillón ½ valva</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Pescado en escabeche</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Con guarnición de papas cube</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Papas rústicas</span><span class="item-dots"></span><span class="item-price">$14.000</span></div><p class="item-note">Papas noissette con crema y verdeo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Matambre a la pizza p/2</span><span class="item-dots"></span><span class="item-price">$32.500</span></div><p class="item-note">Con guarnición de papas a la española</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Lisa Gran Delfín p/2</span><span class="item-dots"></span><span class="item-price">$32.000</span></div><p class="item-note">Con guarnición de papas fritas y ensalada, y salsa primavera, provenzal, criolla y vasca</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Anchoa Gran Delfín p/2</span><span class="item-dots"></span><span class="item-price">Consultar</span></div><p class="item-note">Con guarnición de papas fritas y ensalada, y salsa primavera, provenzal, criolla y vasca</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Peceto a la portuguesa p/2</span><span class="item-dots"></span><span class="item-price">$32.000</span></div><p class="item-note">Con guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Sorrentinos de calabaza y muzzarella</span><span class="item-dots"></span><span class="item-price">$18.900</span></div><p class="item-note">Con salsa a los 4 quesos</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Sorrentinos de jamón y queso</span><span class="item-dots"></span><span class="item-price">$18.900</span></div><p class="item-note">Con salsa de crema y verdeo</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada verde</span><span class="item-dots"></span><span class="item-price">$9.900</span></div><p class="item-note">Rúcula, radicheta, lechuga, apio y arvejas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada Caprese</span><span class="item-dots"></span><span class="item-price">$11.000</span></div><p class="item-note">Tomate cherry, muzzarella, albahaca, orégano</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Bastoncitos de corvina</span><span class="item-dots"></span><span class="item-price">$32.000</span></div><p class="item-note">Con guarnición de papas bastón y puré mixto</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Entraña Delfín p/2</span><span class="item-dots"></span><span class="item-price">$38.000</span></div><p class="item-note">Con guarnición de papas fritas y 2 huevos fritos</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Raviolones de ricota</span><span class="item-dots"></span><span class="item-price">$16.000</span></div><p class="item-note">Con salsa a la crema de puerros y panceta ahumada</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada Tongo</span><span class="item-dots"></span><span class="item-price">$9.900</span></div><p class="item-note">Con arroz, pollo, lechuga, rúcula, morrón y cebolla</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Empanadas de langostino</span><span class="item-dots"></span><span class="item-price">$1.800</span></div><p class="item-note">Rellena de langostino, morrón, cebolla</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Creppes de espinaca</span><span class="item-dots"></span><span class="item-price">$16.000</span></div><p class="item-note">Rellenos de jamón, muzzarella y ricota, con salsa de crema de puerros y panceta</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Pincho de langostino</span><span class="item-dots"></span><span class="item-price">$19.900</span></div><p class="item-note">Envueltos en panceta, con guarnición de papas rústicas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Tallarines de espinaca</span><span class="item-dots"></span><span class="item-price">$17.000</span></div><p class="item-note">Con salsa a la crema y jamón</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Wok de vegetales p/2</span><span class="item-dots"></span><span class="item-price">$19.000</span></div><p class="item-note">A base de arroz y mix de vegetales salteados</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Pejerrey marinera</span><span class="item-dots"></span><span class="item-price">$21.000</span></div><p class="item-note">Con guarnición de papas rejilla y ensalada</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Calamarette a la lionesa</span><span class="item-dots"></span><span class="item-price">$24.000</span></div><p class="item-note">Salteado con morrón, cebolla y guarnición de papas españolas</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Pejerrey Gran Paraná</span><span class="item-dots"></span><span class="item-price">$23.000</span></div><p class="item-note">Con salsa roquefort, salsa blanca, gratinado al horno y guarnición de papas noisette</p></li>
-<li class="item"><div class="item-row"><span class="item-name">Milanesa Don Roberto</span><span class="item-dots"></span><span class="item-price">$32.500</span></div><p class="item-note">Con jamón, queso, morrón, crema de choclo y guarnición de papas fritas a caballo</p></li>
-</ul></section>
-
-<section class="menu-section" id="postres">
-<h2 class="section-title">Postres</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Flan Casero</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Budín de pan</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Mousse de Chocolate</span><span class="item-dots"></span><span class="item-price">$9.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada de Frutas</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Ensalada de Frutas con Helado</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Frutillas con Crema</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Helado Tricolor</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Almendrado</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bombón Escocés</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bombón Suizo</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Tiramisú helado</span><span class="item-dots"></span><span class="item-price">$8.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Charlotte</span><span class="item-dots"></span><span class="item-price">$9.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Don Pedro</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Duraznos en Almíbar</span><span class="item-dots"></span><span class="item-price">$7.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Zapallos en Almíbar</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Higos en Almíbar</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Copa El Delfín</span><span class="item-dots"></span><span class="item-price">$11.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Panqueque de dulce de leche</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Panqueque de manzana</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Panqueque quemado al rhum</span><span class="item-dots"></span><span class="item-price">$11.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Recargo por Dulce de Leche o Crema</span><span class="item-dots"></span><span class="item-price">$2.700</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Queso y dulce</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Tiramisú artesanal</span><span class="item-dots"></span><span class="item-price">$9.000</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="bebidas">
-<h2 class="section-title">Bebidas</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Agua, Soda, Gaseosa chica</span><span class="item-dots"></span><span class="item-price">$4.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Agua saborizada 500 cc</span><span class="item-dots"></span><span class="item-price">$4.600</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Gaseosa Grande 1,5 lts</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Agua saborizada 1,5 lts (Aquarius)</span><span class="item-dots"></span><span class="item-price">$8.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cerveza 1 lt</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cerveza Negra Quilmes Stout 1 lt</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Stella Artois</span><span class="item-dots"></span><span class="item-price">$14.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Heineken 1 lt</span><span class="item-dots"></span><span class="item-price">$16.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cerveza Andes</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Corona 710 cc</span><span class="item-dots"></span><span class="item-price">$14.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Porrón Stella Artois</span><span class="item-dots"></span><span class="item-price">$9.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Porrón Stella sin alcohol</span><span class="item-dots"></span><span class="item-price">$6.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Lata cerveza 473 cc</span><span class="item-dots"></span><span class="item-price">$4.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Porrón Quilmes</span><span class="item-dots"></span><span class="item-price">$4.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Porrón Corona</span><span class="item-dots"></span><span class="item-price">$6.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Copa de vino</span><span class="item-dots"></span><span class="item-price">$3.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Exprimido de naranja</span><span class="item-dots"></span><span class="item-price">$5.900</span></div></li>
-</ul></section>
-
-<section class="menu-section" id="vinos">
-<h2 class="section-title">Vinos Finos</h2>
-<h3 class="group-title">Bodegas Etchart</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Cafayate Torrontés</span><span class="item-dots"></span><span class="item-price">$14.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Etchart Privado</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas López</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Vasco Viejo</span><span class="item-dots"></span><span class="item-price">$7.800</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Vasco Viejo 3/8 (tinto/blanco)</span><span class="item-dots"></span><span class="item-price">$5.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Selección López (tinto/blanco)</span><span class="item-dots"></span><span class="item-price">$9.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Selección López 3/8</span><span class="item-dots"></span><span class="item-price">$6.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Rincón Famoso (tinto)</span><span class="item-dots"></span><span class="item-price">$13.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Rincón Famoso (blanco)</span><span class="item-dots"></span><span class="item-price">$11.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Bianchi</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Bianchi Famiglia Malbec</span><span class="item-dots"></span><span class="item-price">$21.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Bianchi Famiglia Red Blend</span><span class="item-dots"></span><span class="item-price">Consultar</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Don Valentín 3/8</span><span class="item-dots"></span><span class="item-price">Consultar</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Don Valentín Lacrado</span><span class="item-dots"></span><span class="item-price">$9.700</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">New Age</span><span class="item-dots"></span><span class="item-price">$9.600</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Rutini</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Rutini Malbec</span><span class="item-dots"></span><span class="item-price">$49.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Rutini Cabernet-Malbec</span><span class="item-dots"></span><span class="item-price">$38.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Norton</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Norton Clásico Tinto/Blanco</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Norton Clásico 3/8</span><span class="item-dots"></span><span class="item-price">$5.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Norton Elegido</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Norton Select</span><span class="item-dots"></span><span class="item-price">$14.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cosecha Tardía</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Norton Mil Rosas</span><span class="item-dots"></span><span class="item-price">$12.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Champagne Norton E. Brut</span><span class="item-dots"></span><span class="item-price">$23.000</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Santa Julia</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Santa Julia Chenin dulce</span><span class="item-dots"></span><span class="item-price">$15.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Santa Julia Malbec / Chardonnay / Torrontés</span><span class="item-dots"></span><span class="item-price">$11.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Santa Julia Syrah Rosé</span><span class="item-dots"></span><span class="item-price">$11.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Santa Julia 3/8 Malbec / Chardonnay</span><span class="item-dots"></span><span class="item-price">$8.000</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Nieto Senetiner</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Benjamín Nieto Senetiner Malbec / Merlot</span><span class="item-dots"></span><span class="item-price">$11.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Benjamín Nieto Senetiner Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$11.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Benjamín Nieto Senetiner Chardonnay / Sauv. Blanc</span><span class="item-dots"></span><span class="item-price">$11.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodega Luigi Bosca</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Luigi Bosca Malbec</span><span class="item-dots"></span><span class="item-price">$26.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Luigi Bosca Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$26.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Finca La Linda Malbec</span><span class="item-dots"></span><span class="item-price">$19.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Finca La Linda Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$19.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas El Esteco</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Trapiche Reserva Malbec / Syrah</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trapiche Reserva Cabernet / Merlot</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trapiche Reserva Chardonnay</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trapiche Reserva Malbec 3/8</span><span class="item-dots"></span><span class="item-price">Consultar</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trapiche Alaris Sauvignon Blanc / Malbec</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Elementos Malbec</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Elementos Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Elementos Torrontés</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Elementos Torrontés dulce</span><span class="item-dots"></span><span class="item-price">$10.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas San Huberto</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Malbec</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Chardonnay</span><span class="item-dots"></span><span class="item-price">$9.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Catena Zapata</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Álamos Malbec</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Álamos Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Álamos Chardonnay</span><span class="item-dots"></span><span class="item-price">$17.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Álamos Chardonnay / Malbec 3/8</span><span class="item-dots"></span><span class="item-price">$11.000</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Saint Felicien Malbec</span><span class="item-dots"></span><span class="item-price">$26.000</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Uxmal</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Uxmal Malbec</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Uxmal Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Uxmal Malbec 3/8</span><span class="item-dots"></span><span class="item-price">Consultar</span></div></li>
-</ul>
-<h3 class="group-title">Bodegas Chandon</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Latitud 33 Malbec</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Latitud 33 Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Latitud 33 Sauvignon Blanc</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Latitud 33 Chardonnay</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Latitud 33 Syrah</span><span class="item-dots"></span><span class="item-price">$17.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Champagne Chandon</span><span class="item-dots"></span><span class="item-price">$43.000</span></div></li>
-</ul>
-<h3 class="group-title">Finca Las Moras</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Dada 1</span><span class="item-dots"></span><span class="item-price">$11.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Dada 2</span><span class="item-dots"></span><span class="item-price">$11.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Alma Mora Malbec / Cab. Sauvignon / Chardonnay</span><span class="item-dots"></span><span class="item-price">$13.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Alma Mora Dulce de Viognier</span><span class="item-dots"></span><span class="item-price">$13.500</span></div></li>
-</ul>
-<h3 class="group-title">Bodega La Rural</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">San Felipe</span><span class="item-dots"></span><span class="item-price">$10.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe 3/8</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Rosé</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe 12 uvas</span><span class="item-dots"></span><span class="item-price">$11.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Malbec</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Merlot</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Syrah</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble Chardonnay</span><span class="item-dots"></span><span class="item-price">$12.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">San Felipe Roble 3/8 Malbec / Chardonnay</span><span class="item-dots"></span><span class="item-price">$7.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trumpeter Malbec</span><span class="item-dots"></span><span class="item-price">$17.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trumpeter Cabernet Sauvignon</span><span class="item-dots"></span><span class="item-price">$17.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Trumpeter 3/8 (Malbec, Sauvignon Blanc)</span><span class="item-dots"></span><span class="item-price">$10.900</span></div></li>
-</ul>
-<h3 class="group-title">Bodega Salentein</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Killka Malbec / Chardonnay</span><span class="item-dots"></span><span class="item-price">$16.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Portillo Malbec / Sauvignon Blanc</span><span class="item-dots"></span><span class="item-price">$12.500</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Portillo 3/8 Malbec</span><span class="item-dots"></span><span class="item-price">$7.900</span></div></li>
-<li class="item"><div class="item-row"><span class="item-name">Salentein Malbec / Chardonnay</span><span class="item-dots"></span><span class="item-price">$23.000</span></div></li>
-</ul>
-<h3 class="group-title">Bodega Callia</h3>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Callia Malbec / Chardonnay</span><span class="item-dots"></span><span class="item-price">$9.900</span></div></li>
-</ul>
-</section>
-
-<section class="menu-section" id="servicio">
-<h2 class="section-title">Servicio de Panera / Mesa</h2>
-<ul class="item-list">
-<li class="item"><div class="item-row"><span class="item-name">Cubierto por persona</span><span class="item-dots"></span><span class="item-price">$1.800</span></div></li>
-</ul>
-</section>
+<main id="menu-main">
+  <div class="state-msg" id="state-loading">
+    <div class="spinner"></div>
+    <p>Cargando la carta…</p>
+  </div>
 </main>
 
 <footer>
-  <img src="assets/chef-dolphin.jpg" alt="">
+  <img src="assets/chef-dolphin.png" alt="">
   <p class="foot-name">La Cantina del Delfín</p>
   <p class="foot-sub">Marisquería · San Clemente del Tuyú</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
-  const links = document.querySelectorAll('#menu-nav a');
-  const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+/* =========================================================================
+   El menú se lee del archivo menu.csv en esta misma carpeta del repositorio.
+   Se edita desde admin.html (panel de administración) o a mano en GitHub.
+   ========================================================================= */
+const MENU_CSV_PATH = "menu.csv";
+const CACHE_KEY = "menu-delfin-cache-v1";
+/* ========================================================================= */
 
+function slugify(s){
+  return s.toString().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+
+function money(v){
+  const n = parseFloat(v);
+  if (v === undefined || v === null || v === "" || isNaN(n)) return "Consultar";
+  return "$" + Math.round(n).toLocaleString('es-AR');
+}
+
+function esc(s){
+  const d = document.createElement('div');
+  d.textContent = s == null ? "" : s;
+  return d.innerHTML;
+}
+
+function renderItem(row){
+  const hasSecondPrice = row.precio2 !== undefined && String(row.precio2).trim() !== "";
+  const priceHtml = hasSecondPrice
+    ? `<span class="item-price item-price-dual">${money(row.precio)} <em>/</em> ${money(row.precio2)}</span>`
+    : `<span class="item-price">${money(row.precio)}</span>`;
+  let html = `<li class="item"><div class="item-row"><span class="item-name">${esc(row.item)}</span><span class="item-dots"></span>${priceHtml}</div>`;
+  if (row.nota && row.nota.trim()) html += `<p class="item-note">${esc(row.nota)}</p>`;
+  html += `</li>`;
+  return html;
+}
+
+function buildMenu(rows){
+  rows = rows.filter(r => r.seccion && r.item);
+
+  rows.sort((a,b) => {
+    const os = (parseFloat(a.orden_seccion)||0) - (parseFloat(b.orden_seccion)||0);
+    if (os !== 0) return os;
+    return (parseFloat(a.orden_item)||0) - (parseFloat(b.orden_item)||0);
+  });
+
+  const sections = [];
+  const bySection = new Map();
+  for (const r of rows){
+    if (!bySection.has(r.seccion)){
+      const obj = { titulo: r.seccion, id: slugify(r.seccion), subtitulo: "", groups: new Map(), plain: [] };
+      bySection.set(r.seccion, obj);
+      sections.push(obj);
+    }
+    const sec = bySection.get(r.seccion);
+    if (r.subtitulo_seccion && r.subtitulo_seccion.trim() && !sec.subtitulo) sec.subtitulo = r.subtitulo_seccion.trim();
+    if (r.grupo && r.grupo.trim()){
+      if (!sec.groups.has(r.grupo)) sec.groups.set(r.grupo, []);
+      sec.groups.get(r.grupo).push(r);
+    } else {
+      sec.plain.push(r);
+    }
+  }
+
+  const nav = document.getElementById('menu-nav');
+  nav.innerHTML = sections.map(s => `<a href="#${s.id}">${esc(s.titulo)}</a>`).join("");
+
+  const main = document.getElementById('menu-main');
+  const out = [];
+  for (const s of sections){
+    out.push(`<section class="menu-section" id="${s.id}">`);
+    out.push(`<h2 class="section-title">${esc(s.titulo)}</h2>`);
+    if (s.subtitulo) out.push(`<p class="section-subtitle">${esc(s.subtitulo)}</p>`);
+    if (s.plain.length){
+      out.push(`<ul class="item-list">`);
+      out.push(s.plain.map(renderItem).join(""));
+      out.push(`</ul>`);
+    }
+    if (s.groups.size){
+      for (const [groupName, items] of s.groups){
+        out.push(`<h3 class="group-title">${esc(groupName)}</h3>`);
+        out.push(`<ul class="item-list">`);
+        out.push(items.map(renderItem).join(""));
+        out.push(`</ul>`);
+      }
+    }
+    out.push(`</section>`);
+  }
+  main.innerHTML = out.join("\n");
+
+  const links = document.querySelectorAll('#menu-nav a');
+  const secEls = [...links].map(a => document.querySelector(a.getAttribute('href')));
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting){
         const id = '#' + entry.target.id;
         links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
         const active = document.querySelector('#menu-nav a.active');
-        if(active) active.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+        if (active) active.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  secEls.forEach(s => { if (s) obs.observe(s); });
+}
 
-  sections.forEach(s => { if(s) obs.observe(s); });
+function showError(){
+  const main = document.getElementById('menu-main');
+  main.innerHTML = `
+    <div class="state-msg error">
+      <p><strong>No se pudo cargar la carta actualizada.</strong><br>
+      Verificá que el archivo <code>menu.csv</code> esté presente en el repositorio, en la misma carpeta que <code>index.html</code>.</p>
+      <button onclick="location.reload()">Reintentar</button>
+    </div>`;
+}
+
+function loadMenu(){
+  // cache-busting: evita que el navegador o la CDN de GitHub Pages sirvan una copia vieja
+  const url = MENU_CSV_PATH + "?v=" + Date.now();
+
+  Papa.parse(url, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: (results) => {
+      if (!results.data || !results.data.length){
+        showError();
+        return;
+      }
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ rows: results.data, ts: Date.now() })); } catch(e){}
+      buildMenu(results.data);
+    },
+    error: () => {
+      try {
+        const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+        if (cached && cached.rows && cached.rows.length){
+          buildMenu(cached.rows);
+          const note = document.createElement('p');
+          note.className = 'cache-note';
+          note.textContent = 'Mostrando una copia guardada del menú (sin conexión a la planilla).';
+          document.getElementById('menu-main').prepend(note);
+          return;
+        }
+      } catch(e){}
+      showError();
+    }
+  });
+}
+
+loadMenu();
 </script>
 
 </body>

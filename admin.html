@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de administración — La Cantina del Delfín</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b2f4f; --navy-deep:#071f38; --ink:#1c2b36;
+    --paper:#faf6ee; --paper-alt:#f3ecdd; --line:#d8cdb4;
+    --gold:#9c6b2e; --gold-soft:#b8873f;
+    --red:#a4392b; --green:#3c7a4d;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif; font-size:15px; line-height:1.45;
+    padding-bottom: 5rem;
+  }
+  h1,h2{ font-family:'Fraunces', Georgia, serif; margin:0; }
+
+  header.top{
+    background:var(--navy); color:#fff;
+    padding:1.1rem 1.2rem; display:flex; align-items:center; gap:.8rem;
+    flex-wrap:wrap; justify-content:space-between;
+  }
+  header.top .brand{ display:flex; align-items:center; gap:.7rem; }
+  header.top img{ width:38px; height:38px; object-fit:contain; }
+  header.top h1{ font-size:1.15rem; font-weight:600; }
+  header.top .repo-tag{ font-size:.72rem; color:#bcd0dc; }
+  header.top .actions{ display:flex; gap:.5rem; flex-wrap:wrap; }
+  header.top a.preview-link{
+    color:#fff; text-decoration:none; font-size:.82rem; font-weight:600;
+    border:1px solid rgba(255,255,255,.35); padding:.4rem .7rem; border-radius:8px;
+  }
+
+  button{ font-family:inherit; cursor:pointer; }
+  .btn{
+    border:none; border-radius:8px; padding:.45rem .8rem; font-size:.82rem; font-weight:600;
+    background:var(--paper-alt); color:var(--navy); border:1px solid var(--line);
+  }
+  .btn:hover{ background:#ece2c9; }
+  .btn-ghost{ background:transparent; color:#e6eef3; border:1px solid rgba(255,255,255,.35); }
+  .btn-ghost:hover{ background:rgba(255,255,255,.08); }
+  .btn-primary{ background:var(--navy); color:#fff; border:1px solid var(--navy); }
+  .btn-primary:hover{ background:#0e3a60; }
+  .btn-danger{ background:#fff; color:var(--red); border:1px solid #e2b3a9; }
+  .btn-danger:hover{ background:#fdf1ee; }
+  .btn-sm{ padding:.3rem .55rem; font-size:.75rem; border-radius:6px; }
+  .btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+  main{ max-width:1080px; margin:0 auto; padding:1.6rem 1.1rem; }
+
+  /* ---- pantallas de configuración / login ---- */
+  .panel{
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem; max-width:520px; margin: 2.5rem auto;
+  }
+  .panel h2{ font-size:1.25rem; color:var(--navy); margin-bottom:.4rem; }
+  .panel p.hint{ font-size:.85rem; color:#726a5c; margin:.3rem 0 1.1rem; line-height:1.5; }
+  .field{ margin-bottom:.9rem; }
+  .field label{ display:block; font-size:.78rem; font-weight:600; color:var(--navy); margin-bottom:.3rem; }
+  .field input{
+    width:100%; padding:.55rem .65rem; border:1px solid var(--line); border-radius:8px;
+    font-size:.9rem; font-family:inherit; background:var(--paper);
+  }
+  .field input:focus{ outline:2px solid var(--gold-soft); outline-offset:1px; }
+  .field small{ display:block; color:#8a8171; font-size:.74rem; margin-top:.25rem; }
+  .panel details{ margin: .8rem 0 1.2rem; font-size:.82rem; color:#544d41; }
+  .panel details summary{ cursor:pointer; font-weight:600; color:var(--gold); }
+  .panel details ol{ margin:.6rem 0 0; padding-left:1.2rem; }
+  .panel details li{ margin-bottom:.4rem; }
+  .panel details code{ background:var(--paper-alt); padding:.05rem .3rem; border-radius:4px; }
+
+  /* ---- estado ---- */
+  .state-msg{ text-align:center; padding:3rem 1rem; color:#6b6154; }
+  .state-msg .spinner{
+    width:32px;height:32px;margin:0 auto 1rem;border-radius:50%;
+    border:3px solid var(--line); border-top-color:var(--gold-soft);
+    animation:spin .9s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+  .state-msg.error{ color:var(--red); }
+
+  .toast{
+    position:fixed; left:50%; bottom:1.2rem; transform:translateX(-50%);
+    background:var(--navy-deep); color:#fff; padding:.7rem 1.1rem; border-radius:10px;
+    font-size:.85rem; box-shadow:0 10px 30px rgba(0,0,0,.25);
+    display:none; z-index:100; max-width:90vw; text-align:center;
+  }
+  .toast.show{ display:block; }
+  .toast.error{ background:#5c231c; }
+  .toast.success{ background:#1d4a2c; }
+
+  /* ---- editor ---- */
+  .section-card{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:1.1rem 1.1rem 1.3rem; margin-bottom:1.1rem;
+  }
+  .section-head{ display:flex; gap:.6rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:.7rem; }
+  .section-head .titles{ flex:1 1 260px; display:flex; flex-direction:column; gap:.4rem; }
+  .section-head input.sec-title{
+    font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600; color:var(--navy);
+    border:1px solid transparent; border-radius:6px; padding:.2rem .4rem; background:transparent;
+  }
+  .section-head input.sec-title:hover, .section-head input.sec-title:focus{
+    border-color:var(--line); background:var(--paper); outline:none;
+  }
+  .section-head input.sec-subtitle{
+    font-size:.82rem; font-style:italic; color:#726a5c;
+    border:1px solid transparent; border-radius:6px; padding:.2rem .4rem; background:transparent;
+  }
+  .section-head input.sec-subtitle:hover, .section-head input.sec-subtitle:focus{
+    border-color:var(--line); background:var(--paper); outline:none;
+  }
+  .section-head .sec-controls{ display:flex; gap:.35rem; }
+
+  table.items{ width:100%; border-collapse:collapse; }
+  table.items th{
+    text-align:left; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em;
+    color:#8a8171; font-weight:600; padding:.3rem .35rem; border-bottom:1px solid var(--line);
+  }
+  table.items td{ padding:.28rem .35rem; vertical-align:middle; }
+  table.items input{
+    width:100%; border:1px solid var(--line); border-radius:6px; padding:.4rem .45rem;
+    font-size:.85rem; font-family:inherit; background:var(--paper);
+  }
+  table.items input:focus{ outline:2px solid var(--gold-soft); outline-offset:0; }
+  table.items input.num{ text-align:right; }
+  td.col-actions{ white-space:nowrap; text-align:right; }
+  td.col-actions button{ margin-left:.15rem; }
+  .row-add{ margin-top:.6rem; }
+
+  .col-name{ width:26%; }
+  .col-group{ width:11%; }
+  .col-price{ width:12%; }
+  .col-price2{ width:12%; }
+  .col-note{ width:27%; }
+  td.col-actions{ width:12%; }
+
+  @media (max-width:760px){
+    table.items thead{ display:none; }
+    table.items, table.items tbody, table.items tr, table.items td{ display:block; width:100%; }
+    table.items tr{
+      border:1px solid var(--line); border-radius:10px; padding:.6rem .6rem .3rem; margin-bottom:.7rem;
+    }
+    table.items td{ padding:.25rem 0; }
+    table.items td::before{
+      content: attr(data-label); display:block; font-size:.68rem; font-weight:600;
+      color:#8a8171; text-transform:uppercase; letter-spacing:.03em; margin-bottom:.15rem;
+    }
+    td.col-actions{ text-align:left; }
+  }
+
+  .add-section-bar{ text-align:center; margin: 1.4rem 0 2rem; }
+
+  .savebar{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:rgba(250,246,238,.96); backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);
+    padding:.7rem 1rem; display:flex; align-items:center; justify-content:center; gap:.9rem;
+  }
+  .savebar .status{ font-size:.8rem; color:#6b6154; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <img src="assets/logo.png" alt="">
+    <div>
+      <h1>Panel de administración</h1>
+      <div class="repo-tag" id="repo-tag"></div>
+    </div>
+  </div>
+  <div class="actions">
+    <a class="preview-link" href="index.html" target="_blank" rel="noopener">Ver carta pública ↗</a>
+    <button class="btn btn-ghost" id="btn-settings" style="display:none;">Configuración</button>
+    <button class="btn btn-ghost" id="btn-logout" style="display:none;">Cerrar sesión</button>
+  </div>
+</header>
+
+<main id="app">
+  <!-- se completa con JS -->
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+const LS_KEY = "menu-delfin-admin-config";
+const CSV_HEADERS = ["orden_seccion","seccion","subtitulo_seccion","grupo","orden_item","item","precio","precio2","nota"];
+
+let config = null;   // { owner, repo, branch, path, token }
+let fileSha = null;  // sha del archivo actual en GitHub, necesario para poder guardar
+let state = [];       // [{titulo, subtitulo, id, items:[{grupo,item,precio,precio2,nota}, ...]}, ...]
+let dirty = false;
+
+const app = document.getElementById('app');
+const toastEl = document.getElementById('toast');
+
+function toast(msg, kind){
+  toastEl.textContent = msg;
+  toastEl.className = 'toast show' + (kind ? ' ' + kind : '');
+  clearTimeout(toastEl._t);
+  toastEl._t = setTimeout(() => toastEl.classList.remove('show'), 4200);
+}
+
+function loadConfig(){
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch(e){ return null; }
+}
+function saveConfig(c){
+  config = c;
+  localStorage.setItem(LS_KEY, JSON.stringify(c));
+}
+function clearConfig(){
+  localStorage.removeItem(LS_KEY);
+  config = null;
+}
+
+// ---------- utilidades base64 seguras para UTF-8 ----------
+function utf8ToB64(str){
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function b64ToUtf8(b64){
+  return decodeURIComponent(escape(atob(b64.replace(/\n/g, ''))));
+}
+
+// ---------- GitHub API ----------
+async function ghRequest(method, path, body){
+  const res = await fetch(`https://api.github.com/repos/${config.owner}/${config.repo}/contents/${encodeURIComponent(path).replace(/%2F/g,'/')}?ref=${encodeURIComponent(config.branch)}` +
+    (method === 'GET' ? '' : ''), {
+    method,
+    headers: {
+      'Authorization': `Bearer ${config.token}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  return res;
+}
+
+async function fetchMenuFile(){
+  const res = await ghRequest('GET', config.path);
+  if (res.status === 401) throw new Error('AUTH');
+  if (res.status === 404) throw new Error('NOTFOUND');
+  if (!res.ok) throw new Error('HTTP_' + res.status);
+  const data = await res.json();
+  fileSha = data.sha;
+  return b64ToUtf8(data.content);
+}
+
+async function saveMenuFile(csvText){
+  const res = await fetch(`https://api.github.com/repos/${config.owner}/${config.repo}/contents/${config.path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${config.token}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: `Actualizar menú desde el panel de administración — ${new Date().toLocaleString('es-AR')}`,
+      content: utf8ToB64(csvText),
+      sha: fileSha,
+      branch: config.branch
+    })
+  });
+  if (res.status === 401) throw new Error('AUTH');
+  if (res.status === 409) throw new Error('CONFLICT');
+  if (!res.ok) throw new Error('HTTP_' + res.status);
+  const data = await res.json();
+  fileSha = data.content.sha;
+}
+
+// ---------- CSV <-> estado en memoria ----------
+function csvToState(csvText){
+  const parsed = Papa.parse(csvText, { header:true, skipEmptyLines:true });
+  const rows = parsed.data.filter(r => r.seccion && r.item);
+  rows.sort((a,b) => {
+    const os = (parseFloat(a.orden_seccion)||0) - (parseFloat(b.orden_seccion)||0);
+    if (os !== 0) return os;
+    return (parseFloat(a.orden_item)||0) - (parseFloat(b.orden_item)||0);
+  });
+  const sections = [];
+  const bySection = new Map();
+  for (const r of rows){
+    if (!bySection.has(r.seccion)){
+      const obj = { titulo: r.seccion, subtitulo: "", items: [] };
+      bySection.set(r.seccion, obj);
+      sections.push(obj);
+    }
+    const sec = bySection.get(r.seccion);
+    if (r.subtitulo_seccion && r.subtitulo_seccion.trim() && !sec.subtitulo) sec.subtitulo = r.subtitulo_seccion.trim();
+    sec.items.push({
+      grupo: r.grupo || "",
+      item: r.item || "",
+      precio: r.precio || "",
+      precio2: r.precio2 || "",
+      nota: r.nota || ""
+    });
+  }
+  return sections;
+}
+
+function stateToCsv(sections){
+  const rows = [];
+  sections.forEach((sec, si) => {
+    sec.items.forEach((it, ii) => {
+      rows.push({
+        orden_seccion: si + 1,
+        seccion: sec.titulo,
+        subtitulo_seccion: ii === 0 ? (sec.subtitulo || "") : "",
+        grupo: it.grupo || "",
+        orden_item: ii + 1,
+        item: it.item || "",
+        precio: it.precio === "" ? "" : it.precio,
+        precio2: it.precio2 === "" ? "" : it.precio2,
+        nota: it.nota || ""
+      });
+    });
+  });
+  return Papa.unparse({ fields: CSV_HEADERS, data: rows });
+}
+
+// ---------- render ----------
+function markDirty(){ dirty = true; renderSaveBar(); }
+
+function render(){
+  app.innerHTML = "";
+  const wrap = document.createElement('div');
+
+  state.forEach((sec, si) => {
+    wrap.appendChild(renderSectionCard(sec, si));
+  });
+
+  const addSecBar = document.createElement('div');
+  addSecBar.className = 'add-section-bar';
+  addSecBar.innerHTML = `<button class="btn btn-primary" id="add-section-btn">+ Agregar sección</button>`;
+  wrap.appendChild(addSecBar);
+
+  app.appendChild(wrap);
+  document.getElementById('add-section-btn').onclick = () => {
+    state.push({ titulo: "Nueva sección", subtitulo: "", items: [{grupo:"", item:"", precio:"", precio2:"", nota:""}] });
+    markDirty();
+    render();
+  };
+
+  renderSaveBar();
+}
+
+function renderSectionCard(sec, si){
+  const card = document.createElement('div');
+  card.className = 'section-card';
+
+  const head = document.createElement('div');
+  head.className = 'section-head';
+  head.innerHTML = `
+    <div class="titles">
+      <input class="sec-title" value="${escAttr(sec.titulo)}" placeholder="Nombre de la sección">
+      <input class="sec-subtitle" value="${escAttr(sec.subtitulo)}" placeholder="Subtítulo (opcional, ej. una aclaración)">
+    </div>
+    <div class="sec-controls">
+      <button class="btn btn-sm" title="Mover arriba" ${si===0?'disabled':''} data-act="up">↑</button>
+      <button class="btn btn-sm" title="Mover abajo" ${si===state.length-1?'disabled':''} data-act="down">↓</button>
+      <button class="btn btn-sm btn-danger" data-act="del">Eliminar sección</button>
+    </div>`;
+  head.querySelector('.sec-title').oninput = (e) => { sec.titulo = e.target.value; markDirty(); };
+  head.querySelector('.sec-subtitle').oninput = (e) => { sec.subtitulo = e.target.value; markDirty(); };
+  head.querySelector('[data-act="up"]').onclick = () => { if (si>0){ [state[si-1],state[si]]=[state[si],state[si-1]]; markDirty(); render(); } };
+  head.querySelector('[data-act="down"]').onclick = () => { if (si<state.length-1){ [state[si+1],state[si]]=[state[si],state[si+1]]; markDirty(); render(); } };
+  head.querySelector('[data-act="del"]').onclick = () => {
+    if (confirm(`¿Eliminar la sección "${sec.titulo}" y sus ${sec.items.length} ítems?`)){
+      state.splice(si,1); markDirty(); render();
+    }
+  };
+  card.appendChild(head);
+
+  const table = document.createElement('table');
+  table.className = 'items';
+  table.innerHTML = `
+    <thead><tr>
+      <th class="col-name">Ítem</th>
+      <th class="col-group">Grupo (opcional)</th>
+      <th class="col-price">Precio</th>
+      <th class="col-price2">2do precio</th>
+      <th class="col-note">Nota</th>
+      <th></th>
+    </tr></thead>
+    <tbody></tbody>`;
+  const tbody = table.querySelector('tbody');
+
+  sec.items.forEach((it, ii) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="col-name" data-label="Ítem"><input type="text" value="${escAttr(it.item)}" placeholder="Nombre del plato"></td>
+      <td class="col-group" data-label="Grupo"><input type="text" value="${escAttr(it.grupo)}" placeholder="ej. bodega"></td>
+      <td class="col-price" data-label="Precio"><input class="num" type="number" step="0.01" value="${escAttr(it.precio)}" placeholder="Consultar"></td>
+      <td class="col-price2" data-label="2do precio"><input class="num" type="number" step="0.01" value="${escAttr(it.precio2)}" placeholder="—"></td>
+      <td class="col-note" data-label="Nota"><input type="text" value="${escAttr(it.nota)}" placeholder="Ingredientes / aclaración"></td>
+      <td class="col-actions" data-label="">
+        <button class="btn btn-sm" title="Mover arriba" ${ii===0?'disabled':''} data-act="up">↑</button>
+        <button class="btn btn-sm" title="Mover abajo" ${ii===sec.items.length-1?'disabled':''} data-act="down">↓</button>
+        <button class="btn btn-sm btn-danger" title="Eliminar ítem" data-act="del">✕</button>
+      </td>`;
+    const inputs = tr.querySelectorAll('input');
+    inputs[0].oninput = e => { it.item = e.target.value; markDirty(); };
+    inputs[1].oninput = e => { it.grupo = e.target.value; markDirty(); };
+    inputs[2].oninput = e => { it.precio = e.target.value; markDirty(); };
+    inputs[3].oninput = e => { it.precio2 = e.target.value; markDirty(); };
+    inputs[4].oninput = e => { it.nota = e.target.value; markDirty(); };
+    tr.querySelector('[data-act="up"]').onclick = () => { if (ii>0){ [sec.items[ii-1],sec.items[ii]]=[sec.items[ii],sec.items[ii-1]]; markDirty(); render(); } };
+    tr.querySelector('[data-act="down"]').onclick = () => { if (ii<sec.items.length-1){ [sec.items[ii+1],sec.items[ii]]=[sec.items[ii],sec.items[ii+1]]; markDirty(); render(); } };
+    tr.querySelector('[data-act="del"]').onclick = () => {
+      sec.items.splice(ii,1); markDirty(); render();
+    };
+    tbody.appendChild(tr);
+  });
+
+  card.appendChild(table);
+
+  const addRow = document.createElement('div');
+  addRow.className = 'row-add';
+  addRow.innerHTML = `<button class="btn btn-sm" data-act="add-item">+ Agregar ítem</button>`;
+  addRow.querySelector('[data-act="add-item"]').onclick = () => {
+    sec.items.push({ grupo:"", item:"", precio:"", precio2:"", nota:"" });
+    markDirty(); render();
+  };
+  card.appendChild(addRow);
+
+  return card;
+}
+
+function escAttr(s){
+  return (s == null ? "" : String(s)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+
+function renderSaveBar(){
+  let bar = document.getElementById('savebar');
+  if (!bar){
+    bar = document.createElement('div');
+    bar.id = 'savebar';
+    bar.className = 'savebar';
+    document.body.appendChild(bar);
+  }
+  bar.innerHTML = `
+    <span class="status">${dirty ? 'Hay cambios sin guardar' : 'Sin cambios pendientes'}</span>
+    <button class="btn btn-primary" id="save-btn" ${dirty ? '' : 'disabled'}>Guardar cambios en GitHub</button>
+  `;
+  document.getElementById('save-btn').onclick = doSave;
+}
+
+async function doSave(){
+  const btn = document.getElementById('save-btn');
+  btn.disabled = true;
+  btn.textContent = 'Guardando…';
+  try{
+    const csv = stateToCsv(state);
+    await saveMenuFile(csv);
+    dirty = false;
+    renderSaveBar();
+    toast('Guardado. Puede tardar uno o dos minutos en verse en la carta pública.', 'success');
+  } catch(err){
+    if (err.message === 'AUTH'){
+      toast('El token no tiene permiso o venció. Revisá la configuración.', 'error');
+    } else if (err.message === 'CONFLICT'){
+      toast('El archivo cambió en GitHub desde que lo abriste. Recargá la página antes de volver a guardar.', 'error');
+    } else {
+      toast('No se pudo guardar (' + err.message + ').', 'error');
+    }
+    btn.disabled = false;
+    btn.textContent = 'Guardar cambios en GitHub';
+  }
+}
+
+// ---------- pantallas de configuración / carga ----------
+function renderSetupScreen(prefill){
+  const c = prefill || {};
+  app.innerHTML = `
+    <div class="panel">
+      <h2>Conectar con GitHub</h2>
+      <p class="hint">Estos datos quedan guardados solo en este navegador. Hace falta un token de acceso personal con permiso de lectura/escritura sobre este repositorio.</p>
+      <div class="field">
+        <label>Usuario u organización de GitHub</label>
+        <input id="cfg-owner" value="${escAttr(c.owner||'')}" placeholder="ej. federico-vo">
+      </div>
+      <div class="field">
+        <label>Nombre del repositorio</label>
+        <input id="cfg-repo" value="${escAttr(c.repo||'')}" placeholder="ej. menu-delfin">
+      </div>
+      <div class="field">
+        <label>Rama</label>
+        <input id="cfg-branch" value="${escAttr(c.branch||'main')}" placeholder="main">
+      </div>
+      <div class="field">
+        <label>Ruta del archivo del menú</label>
+        <input id="cfg-path" value="${escAttr(c.path||'menu.csv')}" placeholder="menu.csv">
+      </div>
+      <div class="field">
+        <label>Token de acceso personal (fine-grained)</label>
+        <input id="cfg-token" type="password" value="" placeholder="github_pat_...">
+      </div>
+      <details>
+        <summary>¿Cómo creo el token?</summary>
+        <ol>
+          <li>En GitHub: <code>Foto de perfil → Settings → Developer settings → Personal access tokens → Fine-grained tokens</code>.</li>
+          <li><code>Generate new token</code>.</li>
+          <li>En "Repository access" elegí <code>Only select repositories</code> y seleccioná únicamente este repositorio del menú.</li>
+          <li>En "Permissions → Repository permissions" buscá <code>Contents</code> y elegí <code>Read and write</code>.</li>
+          <li>Poné una fecha de expiración (ej. 90 días) y generá el token.</li>
+          <li>Copialo y pegalo acá — GitHub solo lo muestra una vez.</li>
+        </ol>
+      </details>
+      <button class="btn btn-primary" id="cfg-save" style="width:100%;">Conectar</button>
+    </div>`;
+  document.getElementById('cfg-save').onclick = () => {
+    const owner = document.getElementById('cfg-owner').value.trim();
+    const repo = document.getElementById('cfg-repo').value.trim();
+    const branch = document.getElementById('cfg-branch').value.trim() || 'main';
+    const path = document.getElementById('cfg-path').value.trim() || 'menu.csv';
+    const token = document.getElementById('cfg-token').value.trim();
+    if (!owner || !repo || !token){
+      toast('Completá usuario, repositorio y token.', 'error');
+      return;
+    }
+    saveConfig({ owner, repo, branch, path, token });
+    boot();
+  };
+}
+
+function renderLoading(){
+  app.innerHTML = `
+    <div class="state-msg">
+      <div class="spinner"></div>
+      <p>Cargando el menú desde GitHub…</p>
+    </div>`;
+}
+
+function renderLoadError(err){
+  let msg = 'No se pudo cargar el menú.';
+  if (err.message === 'AUTH') msg = 'El token no es válido, no tiene permisos sobre este repositorio, o venció.';
+  if (err.message === 'NOTFOUND') msg = 'No se encontró el archivo del menú en esa ruta/rama. Revisá la configuración.';
+  app.innerHTML = `
+    <div class="state-msg error">
+      <p><strong>${msg}</strong></p>
+      <button class="btn" id="retry-btn">Reintentar</button>
+      <button class="btn" id="settings-btn">Revisar configuración</button>
+    </div>`;
+  document.getElementById('retry-btn').onclick = boot;
+  document.getElementById('settings-btn').onclick = () => renderSetupScreen(config);
+}
+
+async function boot(){
+  config = loadConfig();
+  document.getElementById('btn-settings').style.display = config ? 'inline-block' : 'none';
+  document.getElementById('btn-logout').style.display = config ? 'inline-block' : 'none';
+
+  if (!config){
+    renderSetupScreen();
+    return;
+  }
+  document.getElementById('repo-tag').textContent = `${config.owner}/${config.repo} · rama ${config.branch}`;
+  renderLoading();
+  try{
+    const csv = await fetchMenuFile();
+    state = csvToState(csv);
+    dirty = false;
+    render();
+  } catch(err){
+    renderLoadError(err);
+  }
+}
+
+document.getElementById('btn-settings').onclick = () => renderSetupScreen(config);
+document.getElementById('btn-logout').onclick = () => {
+  if (dirty && !confirm('Hay cambios sin guardar. ¿Cerrar sesión igual?')) return;
+  clearConfig();
+  boot();
+};
+
+window.addEventListener('beforeunload', (e) => {
+  if (dirty){ e.preventDefault(); e.returnValue = ''; }
+});
+
+boot();
+</script>
+</body>
+</html>
