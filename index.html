@@ -59,8 +59,8 @@
     pointer-events:none;
   }
   .hero-logo{
-    width: 128px;
-    height: 128px;
+    width: clamp(140px, 22vw, 200px);
+    height: auto;
     object-fit:contain;
     filter: drop-shadow(0 14px 26px rgba(0,0,0,.35));
     margin-bottom:1.25rem;
@@ -202,13 +202,12 @@
   .cache-note{ font-size:.76rem; color:#a89a7d; text-align:center; margin: -.5rem auto 1.5rem; }
 
   footer{ background:var(--navy-deep); color:#cfe0e8; text-align:center; padding: 2.6rem 1.5rem 2.2rem; margin-top:1rem; }
-  footer img{ width:64px; object-fit:contain; opacity:.9; margin-bottom:.8rem; }
+  footer img{ width:84px; height:auto; object-fit:contain; opacity:.9; margin-bottom:.8rem; }
   footer .foot-name{ font-family:'Fraunces', serif; font-size:1.15rem; color:#fff; margin-bottom:.2rem; }
   footer .foot-sub{ font-size:.78rem; letter-spacing:.06em; color:#8fa9b8; text-transform:uppercase; }
 
   @media (max-width:480px){
     .hero{ padding: 2.6rem 1.2rem 3.6rem; }
-    .hero-logo{ width:104px; height:104px; }
     main{ padding: 1.8rem 1rem 1rem; }
     #sugerencias-del-chef{ margin: 1.9rem -1rem 2.3rem; padding: 1.9rem 1rem 2.3rem; }
   }
