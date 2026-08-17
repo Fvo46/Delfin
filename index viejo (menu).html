@@ -85,22 +85,6 @@
     color:#d9e6ee;
     font-weight:400;
   }
-  .hero-contact{
-    margin-top:.5rem;
-    font-size:1.05rem;
-    color:#d9e6ee;
-    font-weight:400;
-    line-height:1.6;
-  }
-  .hero-contact a{
-    color:#d9e6ee;
-    text-decoration:none;
-    border-bottom:1px solid rgba(217,230,238,.4);
-    transition:border-color .15s ease;
-  }
-  .hero-contact a:hover{
-    border-color: rgba(217,230,238,.9);
-  }
   .hero-wave{
     position:absolute;
     left:0; right:0; bottom:-1px;
@@ -221,14 +205,6 @@
   footer img{ width:84px; height:auto; object-fit:contain; opacity:.9; margin-bottom:.8rem; }
   footer .foot-name{ font-family:'Fraunces', serif; font-size:1.15rem; color:#fff; margin-bottom:.2rem; }
   footer .foot-sub{ font-size:.78rem; letter-spacing:.06em; color:#8fa9b8; text-transform:uppercase; }
-  footer .foot-contact{ margin-top:.9rem; font-size:.85rem; color:#cfe0e8; line-height:1.7; }
-  footer .foot-contact a{
-    color:#cfe0e8;
-    text-decoration:none;
-    border-bottom:1px solid rgba(207,224,232,.35);
-    transition:border-color .15s ease;
-  }
-  footer .foot-contact a:hover{ border-color: rgba(207,224,232,.85); }
 
   @media (max-width:480px){
     .hero{ padding: 2.6rem 1.2rem 3.6rem; }
@@ -248,10 +224,6 @@
   <p class="hero-eyebrow">Marisquería</p>
   <h1>La Cantina del Delfín</h1>
   <p class="hero-sub">San Clemente del Tuyú</p>
-  <p class="hero-contact">
-    Av. XI 225<br>
-    <a href="tel:+542252423211">02252 42-3211</a>
-  </p>
   <div class="hero-wave">
     <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C150,60 350,0 600,28 C850,56 1050,8 1200,30 L1200,60 L0,60 Z" fill="#faf6ee"/></svg>
   </div>
@@ -272,10 +244,6 @@
   <img src="assets/chef-dolphin.png" alt="">
   <p class="foot-name">La Cantina del Delfín</p>
   <p class="foot-sub">Marisquería · San Clemente del Tuyú</p>
-  <p class="foot-contact">
-    Av. XI 225<br>
-    <a href="tel:+542252423211">02252 42-3211</a>
-  </p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -284,14 +252,8 @@
    El menú se lee del archivo menu.csv en esta misma carpeta del repositorio.
    Se edita desde admin.html (panel de administración) o a mano en GitHub.
    ========================================================================= */
-/* =========================================================================
-   CONFIGURACIÓN — pegar acá la URL de la planilla de Google publicada como CSV
-   (Archivo → Compartir → Publicar en la web → elegir la hoja → formato CSV)
-   Ver README.md para el paso a paso.
-   ========================================================================= */
-const SHEET_CSV_URL = "REEMPLAZAR_CON_URL_CSV_DE_GOOGLE_SHEETS";
+const MENU_CSV_PATH = "menu.csv";
 const CACHE_KEY = "menu-delfin-cache-v1";
-/* ========================================================================= */
 /* ========================================================================= */
 
 function slugify(s){
@@ -396,23 +358,16 @@ function showError(){
   main.innerHTML = `
     <div class="state-msg error">
       <p><strong>No se pudo cargar la carta actualizada.</strong><br>
-      Verificá que la planilla de Google esté publicada como CSV y que la URL en <code>index.html</code> sea correcta.</p>
+      Verificá que el archivo <code>menu.csv</code> esté presente en el repositorio, en la misma carpeta que <code>index.html</code>.</p>
       <button onclick="location.reload()">Reintentar</button>
     </div>`;
 }
 
 function loadMenu(){
-  if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf("REEMPLAZAR_CON_URL") !== -1){
-    document.getElementById('menu-main').innerHTML = `
-      <div class="state-msg error">
-        <p><strong>Falta configurar la planilla.</strong><br>
-        Pegá la URL de tu Google Sheet publicado como CSV en la constante <code>SHEET_CSV_URL</code> dentro de <code>index.html</code>.
-        Mirá el <code>README.md</code> para el paso a paso.</p>
-      </div>`;
-    return;
-  }
+  // cache-busting: evita que el navegador o la CDN de GitHub Pages sirvan una copia vieja
+  const url = MENU_CSV_PATH + "?v=" + Date.now();
 
-  Papa.parse(SHEET_CSV_URL, {
+  Papa.parse(url, {
     download: true,
     header: true,
     skipEmptyLines: true,
